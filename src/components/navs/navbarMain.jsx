@@ -9,21 +9,23 @@ const NavbarMain = () => {
         </div>
         <div className='navbarMain2'>
             <div className='startNavBtns'>
-              <img height={45} src="/psnIcon-sm.png" alt="Psn club logo" />
+              <a href="/">
+                <img height={45} src="/psnIcon-sm.png" alt="Psn club logo" /> 
+              </a>
             </div>
             
             <div className='centerNavBtns'>
-              <button>Home</button>
-              <button>PS5 Accounts</button>
-              <button>PS4 Accounts</button>
-              <button>All Accounts</button>
-              <button>Other Services</button>
+              <a href='/'>Home</a>
+              <a href='/ps5-accounts'>PS5 Accounts</a>
+              <a href='/ps4-accounts'>PS4 Accounts</a>
+              <a href='/all-accounts'>All Accounts</a>
+              <a href='/other-services'>Other Services</a>
             </div>
             
             <div className='endNavBtns fixSpace'>
-              <button>
+              <a href='/search'>
                 <AiOutlineSearch size={25} />
-              </button>
+              </a>
             </div>
         </div>
     </div>

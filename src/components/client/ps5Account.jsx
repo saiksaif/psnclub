@@ -2,7 +2,9 @@ import React from 'react'
 
 const Ps5Account = () => {
   return (
-    <div>Ps5Account</div>
+    <div className='ps5AccountsPage'>
+      <h1>All PS5 Accounts Available</h1>
+    </div>
   )
 }
 

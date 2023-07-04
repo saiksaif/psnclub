@@ -11,6 +11,8 @@ const ForgotPass = () => {
             <input type="email" placeholder="Admin Email" id="" required />
             <input type="email" placeholder="Other Email" id="" required />
             <input type="password" placeholder="New Password" id="" minLength={6} maxLength={16} required />
+
+            <button type="submit">Change Password</button>
         </form>
     </div>
   )

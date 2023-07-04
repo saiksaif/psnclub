@@ -2,7 +2,9 @@ import React from 'react'
 
 const AllAccount = () => {
   return (
-    <div>AllAccount</div>
+    <div>
+      <h1>AllAccount</h1>
+    </div>
   )
 }
 
