@@ -247,8 +247,35 @@ body {
   rotate: 15deg;
 }
 
+.middleSectionExplore {
+  margin: 0 7vw;
+}
+.HomePageOtherServices {
+  margin: 7vw;
+  padding: 30px 20px;
+  border-radius: 15px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .ps5AccountsPage {
   min-height: 500px;
 }
 
+/* //////////////   FOOTER COMPONENT PAGE   ////////////////// */
+.footerMain {
+  padding: 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.footerLogo img {
+
+}
+.centerPagesFooter {
+
+}
