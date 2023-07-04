@@ -1,10 +1,15 @@
 import React from 'react'
 import { AiOutlineSearch } from 'react-icons/ai';
 
+import { Link } from 'react-router-dom'
+
 const NavbarMain = () => {
   return (
     <div className='navbarMain'>
         <div className='navbarMain1'>
+            <span>PSN CLUB</span>
+        </div>
+        <div className='navbarMain1 navbarMain1Fix'>
             <span>PSN CLUB</span>
         </div>
         <div className='navbarMain2'>
@@ -15,17 +20,17 @@ const NavbarMain = () => {
             </div>
             
             <div className='centerNavBtns'>
-              <a href='/'>Home</a>
-              <a href='/ps5-accounts'>PS5 Accounts</a>
-              <a href='/ps4-accounts'>PS4 Accounts</a>
-              <a href='/all-accounts'>All Accounts</a>
-              <a href='/other-services'>Other Services</a>
+              <Link className='centerNavBtnsA' to='/'>Home</Link>
+              <Link className='centerNavBtnsA' to='/ps5-accounts'>PS5 Accounts</Link>
+              <Link className='centerNavBtnsA' to='/ps4-accounts'>PS4 Accounts</Link>
+              <Link className='centerNavBtnsA' to='/all-accounts'>All Accounts</Link>
+              <Link className='centerNavBtnsA' to='/other-services'>Other Services</Link>
             </div>
             
             <div className='endNavBtns fixSpace'>
-              <a href='/search'>
+              <Link className='endNavBtnsA' to='/search'>
                 <AiOutlineSearch size={25} />
-              </a>
+              </Link>
             </div>
         </div>
     </div>

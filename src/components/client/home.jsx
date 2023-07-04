@@ -30,7 +30,7 @@ const Home = () => {
               <img src="/homebg.png" alt="Home Banner" />
           </div>
 
-
+          <br />
           <div className="HomePageCrossSection">
             <h1 className='ps5TitleHomePage'>PS5 Games</h1>
             <div className='ps5Img'>
