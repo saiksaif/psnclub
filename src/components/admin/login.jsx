@@ -6,7 +6,7 @@ import * as yup from 'yup';
 // import TextField from '@material-ui/core/TextField';
 import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
-import { useAuth } from './auth';
+// import { useAuth } from './auth';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -23,7 +23,7 @@ const validationSchema = yup.object({
 
 const Login = () => {
     const [user, setUser] = React.useState('')
-    const auth = useAuth()
+    // const auth = useAuth()
     const navigate = useNavigate()
 
     const formik = useFormik({
@@ -61,7 +61,7 @@ const Login = () => {
     function checkLoginToken(token, values) {
         if (token) {
             localStorage.setItem('userToken', token)
-            auth.login(token)
+            // auth.login(token)
             navigate('/')
         }
         else {
