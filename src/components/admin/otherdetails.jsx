@@ -10,6 +10,8 @@ export default Otherdetails
 
 
 /*
+  AREEBA
+
   Here crud operation will be performed
   
   Show option for creating, updating details

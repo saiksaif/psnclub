@@ -21,6 +21,8 @@ const ForgotPass = () => {
 export default ForgotPass
 
 /*
+  WALEED
+
     Implement forgot password here
     Admin has to enter 2 emails to be able to change password
 

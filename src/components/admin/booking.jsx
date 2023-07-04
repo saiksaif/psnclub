@@ -2,7 +2,12 @@ import React from 'react'
 
 const Booking = () => {
   return (
-    <div>Booking</div>
+    <div>
+      Booking
+
+      {/* LIST OF Bookings with delete and view btn */}
+
+    </div>
   )
 }
 
@@ -10,6 +15,8 @@ export default Booking
 
 
 /*
+  AREEBA
+
     Leave booking for last, implement other things first
 
   Here crud operation will be performed

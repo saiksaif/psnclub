@@ -18,6 +18,8 @@ const ChangePass = () => {
 export default ChangePass
 
 /*
+  WALEED
+
   Admin will write old password and new password, if old password is correct then password will be updated in database
   Remember to perform MD5 Hashing for password but at end of project not now if time consuming
 

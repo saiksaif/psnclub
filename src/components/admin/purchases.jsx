@@ -10,6 +10,8 @@ export default Purchases
 
 
 /*
+  AREEBA
+
   Here crud operation will be performed
   Show a list of all purchases in database 
   Show option for creating, updating and deleting purchases

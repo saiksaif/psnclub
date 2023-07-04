@@ -32,6 +32,8 @@ const Dashboard = () => {
 export default Dashboard
 
 /*
+  AREEBA
+
   Perform read operations here
   Should show number of accounts and other stats mentioned in documentation
 */

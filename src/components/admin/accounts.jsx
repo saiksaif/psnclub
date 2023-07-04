@@ -16,6 +16,8 @@ const Accounts = () => {
 export default Accounts
 
 /*
+  AREEBA
+
   Here crud operation will be performed
   Show a list of all accounts in database 
   Show option for creating, updating and deleting accounts
