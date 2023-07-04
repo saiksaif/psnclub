@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: #000;
 }
 .animatedBg {
   margin: 0;
@@ -10,9 +11,9 @@ body {
   background-color: #f2f;
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(120deg, #000, #0d3068, #236fb1);
-  background-size: 150% 150%;
-  animation: bgAnimatedGradient 20s infinite ease;
+  background-image: linear-gradient(120deg, #000, #0d3068, #10397c, #2166a3, #236fb1);
+  background-size: 200% 200%;
+  animation: bgAnimatedGradient 10s infinite ease;
 }
 
 @keyframes bgAnimatedGradient {
@@ -68,7 +69,7 @@ body {
 }
 
 .centerNavBtns {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
 }
 
@@ -106,7 +107,7 @@ body {
   cursor: pointer;
   transition: 0.2s;
   height: 25px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 } .endNavBtns a:hover {
   border-bottom: 3px solid #0d3068;
 }
@@ -146,7 +147,108 @@ body {
   padding: 5vw;
 }
 
+.ps4Img {
+  height: 0;
+  position: relative;
+  left: 550px;
+  top: -530px;
+}
+.ps5Img {
+  height: 0;
+  position: relative;
+  left: 900px;
+  top: -480px;
+}
+.ps4Img.scrolled {
+  position: relative;
+  top: -430px;
+}
+.ps5Img.scrolled {
+  position: relative;
+  top: -380px;
+}
+/* @supports (animation-timeline) {
+  #my-div {
+    animation-name: move-down;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-timeline: scroll 0.5s;
+  }
+} */
+/* 
+@keyframes move-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+} */
+.countGS {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  height: fit-content;
+  font-size: 30px;
+  font-weight: 800;
+  color: white;
+  /* border: 1px solid red; */
+} .countGSIn {
+  font-weight: 600;
+  font-size: 80px;
+} #countGSIn1 {
+  margin-left: 140px;
+} #countGSIn2 {
+  margin-left: 300px;
+}
+
+.HomeCategoryBoxes {
+  padding: 0 7vw;
+  margin-bottom: 7vw;
+  min-height: 400px;
+  display: flex;
+  justify-content: space-between;
+} .ps5GamesBoxHome {
+  cursor: pointer;
+  height: 600px;
+  width: 500px;
+  box-shadow: 5px 5px 15px #00000050;
+  background-color: white;
+  background-image: url("https://multiplayer.net-cdn.it/thumbs/images/2020/10/29/final-fantasy-16-keyart_jpg_0x0_q85.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+} .ps4GamesBoxHome {
+  cursor: pointer;
+  height: 600px;
+  width: 500px;
+  box-shadow: 5px 5px 15px #00000050;
+  background-color: white;
+  background-image: url("https://i.pinimg.com/736x/14/70/8c/14708c6f065703456162f895387d0ec2.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+#dsController5 {
+  position: relative;
+  left: 430px;
+  top: 60px;
+  rotate: -15deg;
+}
+#dsController4 {
+  position: relative;
+  left: -240px;
+  top: 350px;
+  rotate: 15deg;
+}
+
 
 .ps5AccountsPage {
   min-height: 500px;
 }
+
