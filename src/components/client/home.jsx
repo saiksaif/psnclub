@@ -80,12 +80,14 @@ const Home = () => {
             </div>
           </div>
 
+          <h1 className='middleSectionExplore'>Explore More:</h1>
+
           <div className="HomePageOtherServices">
-            <img src="/Netflix.png" alt="Netflix Logo" height={250}/>
-            <img src="/amazon.png" alt="Amazon Prime Logo" />
-            <img src="/disney.png" alt="Disney + Logo" />
-            <img src="/appletv.png" alt="Apple TV + Logo" />
-            <img src="/hbo.png" alt="HBO Logo" />
+            <img src="/Netflix.png" alt="Netflix Logo" width={250}/>
+            <img src="/amazon.png" alt="Amazon Prime Logo" width={250} />
+            <img src="/disny.png" alt="Disney + Logo" width={250} />
+            <img src="/appletv.jpeg" alt="Apple TV + Logo" width={250} />
+            <img src="/hbo.png" alt="HBO Logo" width={250} />
           </div>
         </div>    
       </div>
