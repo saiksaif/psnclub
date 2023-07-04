@@ -1,51 +1,64 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  overflow: hidden;
+}
+.animatedBg {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f2f;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(120deg, #000, #0d3068, #236fb1);
+  background-size: 150% 150%;
+  animation: bgAnimatedGradient 20s infinite ease;
+}
 
-  background-color: rgb(198, 198, 198);
+@keyframes bgAnimatedGradient {
+  0% {
+    background-position: 0% 85%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 85%;
+  }
+}
 
-  align-items: center;
-  align-content: center;
-  text-align: center;
+.MainArea {
+  margin: 0;
+  padding: 0;
+  margin-right: 30px;
+  color: white;
 }
-input, button {
-  background-color: white;
-  padding: 5px;
-  margin: 5px;
-  border: 1px solid black;
-  border-radius: 7px;
-  min-width: 80px;
-}
-ul {
-  min-width: 250px;
-  width: fit-content;
-  margin: 0 auto;
-  list-style: none;
-  /* border: 1px solid red; */
-  padding-left: 0;
-}
-li {
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-  margin-left: 0;
-  border-radius: 7px;
-  border: 1px solid grey;
-  padding: 7px;
-  margin: 4px;
-  background-color: white;
-}
-.icon {
-  cursor: pointer;
-  margin: 0 5px;
+
+/* //////////////   Navbar Main   /////////////////// */
+
+.navbarMain1 {
+  background-color: black;
+  color: white;
+  width: 100vw;
+  font-family: 'Times New Roman', Times, serif;
   font-size: large;
+  padding: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.navbarMain1 span {
+  margin-right: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbarMain2 {
+  background-color: white;
+  color: black;
+  width: 100vw;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
