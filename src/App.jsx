@@ -3,17 +3,13 @@ import List from './components/list';
 import axios from 'axios';
 import { baseURL } from './utils/constant';
 
-import NavbarMain from './components/navs/navbarMain';
+import Home from './components/client/home';
 
 const App = () => {
 
   return (
     <main className='MainArea'>
-      <NavbarMain />
-
-      <span>PSN Club</span>
-
-      
+      <Home />
     </main>
   );
 };
