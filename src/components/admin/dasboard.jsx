@@ -1,12 +1,35 @@
 import React from 'react'
 
-const Dasboard = () => {
+const Dashboard = () => {
   return (
-    <div>Dasboard</div>
+    <div>
+      Dashboard
+    
+      {/* Number of Accounts Saved */}
+      <span>{}</span>
+      <br />
+
+      {/* Number of Purcases */}
+      <span>{}</span>
+      <br />
+
+      {/* Number of Bookings */}
+      <span>{}</span>
+      <br />
+
+      <a href="/admin-accounts">Manage Accounts</a>
+      <a href="/admin-purchases">Manage Purchases</a>
+      <a href="/admin-booking">Manage Bookings</a>
+      <a href="/admin-accounts">Manage Details</a>
+
+      <a href="/">Signout</a>
+    </div>
+
+    
   )
 }
 
-export default Dasboard
+export default Dashboard
 
 /*
   Perform read operations here
