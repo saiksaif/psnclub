@@ -15,11 +15,11 @@ const NavbarMain = () => {
         <div className='navbarMain2'>
             <div className='startNavBtns'>
               <a href="/">
-                <img height={45} src="/psnIcon-sm.png" alt="Psn club logo" /> 
+                <img src="/psnIcon-sm.png" alt="Psn club logo" height={45} /> 
               </a>
             </div>
             
-            <div className='centerNavBtns'>
+            <div className='centerNavBtns hidden-sm'>
               <Link className='centerNavBtnsA' to='/'>Home</Link>
               <Link className='centerNavBtnsA' to='/ps5-accounts'>PS5 Accounts</Link>
               <Link className='centerNavBtnsA' to='/ps4-accounts'>PS4 Accounts</Link>
