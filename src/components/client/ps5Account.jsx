@@ -79,10 +79,11 @@ const Ps5Account = () => {
   return (
     <div className='ps5AccountsPage'>
       <div className="inPs5Accounts">
-        <h2>Filtered Account Data:</h2>
+        {/* <h2>Filtered Account Data:</h2> */}
         <ul>
           {filteredAccountData.map((account, index) => (
-            <li key={index}>
+            // {account.ava}
+            <div className='accountInstance' key={index}>
               <h3>Product ID: {account.productid}</h3>
               <p>Primary Account: {account.primaryAccount.toString()}</p>
               <p>Secondary Account: {account.secondaryAccount.toString()}</p>
@@ -99,7 +100,7 @@ const Ps5Account = () => {
                   </li>
                 ))}
               </ul>
-            </li>
+            </div>
           ))}
         </ul>
       </div>

@@ -1,6 +1,7 @@
 [
     {
         "productid": 10001,
+        "productAvailability": false,
         "accountpricevisibility": true,
         "accountPrice": 2500,
         "primaryAccount": true,
@@ -14,7 +15,8 @@
                 "description": "story of Arthur Morgan and his gang",
                 "imageLink": "no",
                 "psaGame": true,
-                "ps5Game": true},
+                "ps5Game": true
+            },
             {
                 "gameName": "Ghost Of Tsushima",
                 "description": "story of Jin Sakai against the Mongols",
@@ -26,6 +28,7 @@
     },
     {
         "productid": 10002,
+        "productAvailability": true,
         "accountpricevisibility": true,
         "accountPrice": 3000,
         "primaryAccount": true,
@@ -59,6 +62,7 @@
     },
     {
         "productid": 10003,
+        "productAvailability": true,
         "accountpricevisibility": true,
         "accountPrice": 5000,
         "primaryAccount": true,
