@@ -64,7 +64,8 @@ const Ps5Account = () => {
 
         // Filter the account data based on "ps5Game" condition
         const filteredData = data.filter((account) =>
-          account.gamelist.some((game) => game.ps5Game)
+          account.gamelist.some((game) => game.ps5Game) &&
+          account.productAvailability
         );
 
         setFilteredAccountData(filteredData);
@@ -82,7 +83,6 @@ const Ps5Account = () => {
         {/* <h2>Filtered Account Data:</h2> */}
         <ul>
           {filteredAccountData.map((account, index) => (
-            // {account.ava}
             <div className='accountInstance' key={index}>
               <h3>Product ID: {account.productid}</h3>
               <p>Primary Account: {account.primaryAccount.toString()}</p>
