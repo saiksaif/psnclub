@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CountUp from 'react-countup'
 import ScrollTrigger from 'react-scroll-trigger'
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   const [counterOn1, setCounterOn1] = useState(false);
@@ -34,7 +34,7 @@ const Home = () => {
           <div className="HomePageCrossSection">
             <h1 className='ps5TitleHomePage'>PS5 Games</h1>
             <div className='ps5Img'>
-              <img src="/ps5.png" alt="Ps5 image" height={390} />
+              <img src="/ps5.png" alt="Ps5 image"/>
             </div>
             <div className='countGS' id='countGSIn1'>
               <span>Games<br />SOLD</span>
@@ -49,7 +49,7 @@ const Home = () => {
             <br />
             <h1 className='ps4TitleHomePage'>PS4 Games</h1>
             <div className="ps4Img" id='#my-div'>
-              <img src="/ps4.png" alt="Ps4 image" height={250} />
+              <img src="/ps4.png" alt="Ps4 image"/>
             </div>
             <div className='countGS' id='countGSIn2'>
               <span>Games<br />SOLD</span>
@@ -71,17 +71,22 @@ const Home = () => {
           </div>
 
           <div className='HomeCategoryBoxes'>
-            <div className='ps5GamesBoxHome'>
-              <img id='dsController5' src="/ds5.png" alt="Ps5 controller" width={300} />
-            </div>
+            <Link to="/ps5-accounts">
+              <div className='ps5GamesBoxHome'>
+                <img id='dsController5' src="/ds5.png" alt="Ps5 controller" width={300} />
+              </div>
+            </Link>
 
-            <div className='ps4GamesBoxHome'>
-              <img id='dsController4' src="/ds4.png" alt="Ps5 controller" width={300} />
-            </div>
+            <Link to="/ps4-accounts">
+              <div className='ps4GamesBoxHome'>
+                <img id='dsController4' src="/ds4.png" alt="Ps5 controller" width={300} />
+              </div>
+            </Link>
           </div>
 
           <h1 className='middleSectionExplore'>Explore More:</h1>
 
+          <Link to="/other-services">
           <div className="HomePageOtherServices">
             <img src="/Netflix.png" alt="Netflix Logo" width={250}/>
             <img src="/amazon.png" alt="Amazon Prime Logo" width={250} />
@@ -89,6 +94,7 @@ const Home = () => {
             <img src="/appletv.jpeg" alt="Apple TV + Logo" width={250} />
             <img src="/hbo.png" alt="HBO Logo" width={250} />
           </div>
+          </Link>
         </div>    
       </div>
     </div>

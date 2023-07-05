@@ -67,9 +67,10 @@ body {
 }
 
 
-.startNavBtns img {
+.startNavBtns a img {
   margin-left: 30px;
   cursor: pointer;
+  height: 50px;
 }
 
 .centerNavBtns {
@@ -93,6 +94,11 @@ body {
   /* border: 1px solid red; */
 } .centerNavBtnsA:hover {
   border-bottom: 3px solid #0d3068;
+}
+@media (max-width: 768px) {
+  .hidden-sm {
+    display: none;
+  }
 }
 
 .endNavBtns {
@@ -152,6 +158,12 @@ body {
   padding: 5vw;
 }
 
+.ps4Img img {
+  height: 250px;
+}
+.ps5Img img {
+  height: 360px;
+}
 .ps4Img {
   height: 0;
   position: relative;
@@ -164,32 +176,7 @@ body {
   left: 900px;
   top: -480px;
 }
-.ps4Img.scrolled {
-  position: relative;
-  top: -430px;
-}
-.ps5Img.scrolled {
-  position: relative;
-  top: -380px;
-}
-/* @supports (animation-timeline) {
-  #my-div {
-    animation-name: move-down;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-timeline: scroll 0.5s;
-  }
-} */
-/* 
-@keyframes move-down {
-  0% {
-    transform: translateY(0);
-  }
 
-  100% {
-    transform: translateY(-10px);
-  }
-} */
 .countGS {
   width: 100%;
   height: 90px;

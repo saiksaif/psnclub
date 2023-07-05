@@ -16,7 +16,7 @@ const FooterMain = () => {
               <Link className='reactLinks' to="/all-accounts">All Accounts</Link> 
             </div>
 
-            <ul className="lastLinksFooter">
+            <ul className="lastLinksFooter hidden-sm">
               <li>03044302391</li>
               <li><br /></li>
               <li>Whatsapp Link</li>
