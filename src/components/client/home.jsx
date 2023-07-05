@@ -32,42 +32,42 @@ const Home = () => {
 
           <br />
           <div className="HomePageCrossSection">
-            <h1 className='ps5TitleHomePage'>PS5 Games</h1>
+            {/* <h1 className='ps5TitleHomePage'>PS5 Games</h1> */}
             <div className='ps5Img'>
               <img src="/ps5.png" alt="Ps5 image"/>
             </div>
-            <div className='countGS' id='countGSIn1'>
-              <span>Games<br />SOLD</span>
-              <span>&nbsp;&nbsp;:&nbsp;&nbsp;</span>
+            {/* <div className='countGS' id='countGSIn1'>
+              <div>Games<br />SOLD</div>
+              <div>&nbsp;&nbsp;:&nbsp;&nbsp;</div>
               <ScrollTrigger onEnter={() => setCounterOn1(true)} onExit={() => setCounterOn1(false)} triggerOnce={true}>
-                <span className='countGSIn'>
+                <div className='countGSIn'>
                   {counterOn1 && (<CountUp start={0} end={201} duration={2} delay={0} ref={(countUp) => {this.countUp = countUp;}}/>)}+
-                </span>
+                </div>
               </ScrollTrigger>
-            </div>
+            </div> */}
                           
             <br />
-            <h1 className='ps4TitleHomePage'>PS4 Games</h1>
+            {/* <h1 className='ps4TitleHomePage'>PS4 Games</h1> */}
             <div className="ps4Img" id='#my-div'>
               <img src="/ps4.png" alt="Ps4 image"/>
             </div>
-            <div className='countGS' id='countGSIn2'>
-              <span>Games<br />SOLD</span>
-              <span>&nbsp;&nbsp;:&nbsp;&nbsp;</span>
+            {/* <div className='countGS' id='countGSIn2'>
+              <div>Games<br />SOLD</div>
+              <div>&nbsp;&nbsp;:&nbsp;&nbsp;</div>
               <ScrollTrigger onEnter={() => setCounterOn2(true)} onExit={() => setCounterOn2(false)} triggerOnce={true}>
-                <span className='countGSIn'>
+                <div className='countGSIn'>
                   {counterOn2 && (<CountUp start={0} end={156} duration={2} delay={0} ref={(countUp) => {this.countUp = countUp;}}/>)}+
-                </span>
+                </div>
               </ScrollTrigger>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-              <span>Happy<br />Customers</span>
-              <span>&nbsp;&nbsp;:&nbsp;&nbsp;</span>
+              <div>Happy<br />Customers</div>
+              <div>&nbsp;&nbsp;:&nbsp;&nbsp;</div>
               <ScrollTrigger onEnter={() => setCounterOn2(true)} onExit={() => setCounterOn2(false)} triggerOnce={true}>
-                <span className='countGSIn'>
+                <div className='countGSIn'>
                   {counterOn2 && (<CountUp start={0} end={156} duration={2} delay={0} ref={(countUp) => {this.countUp = countUp;}}/>)}+
-                </span>
+                </div>
               </ScrollTrigger>
-            </div>
+            </div> */}
           </div>
 
           <div className='HomeCategoryBoxes'>

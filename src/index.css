@@ -50,7 +50,7 @@ body {
   position: fixed;
   top: 0;
 }
-.navbarMain1 span, .fixSpace {
+.navbarMain1 div, .fixSpace {
   margin-right: 20px;
 }
 
@@ -168,7 +168,7 @@ body {
   height: 0;
   position: relative;
   left: 550px;
-  top: -530px;
+  top: -380px;
 }
 .ps5Img {
   height: 0;

@@ -7,10 +7,10 @@ const NavbarMain = () => {
   return (
     <div className='navbarMain'>
         <div className='navbarMain1'>
-            <span>PSN CLUB</span>
+            <div>PSN CLUB</div>
         </div>
         <div className='navbarMain1 navbarMain1Fix'>
-            <span>PSN CLUB</span>
+            <div>PSN CLUB</div>
         </div>
         <div className='navbarMain2'>
             <div className='startNavBtns'>
