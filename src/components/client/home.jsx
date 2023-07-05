@@ -84,7 +84,7 @@ const Home = () => {
             </Link>
           </div>
 
-          <h1 className='middleSectionExplore'>Explore More:</h1>
+          {/* <h1 className='middleSectionExplore'>Explore More:</h1> */}
 
           <Link to="/other-services">
           <div className="HomePageOtherServices">
