@@ -28,15 +28,13 @@ const Login = () => {
 
     const formik = useFormik({
         initialValues: {
-            email: 'example@example.com',
-            password: 'example',
+            email: 'waleed@gmail.com',
+            password: '1234567890',
         },
         validationSchema: validationSchema,
         onSubmit: (values) => {
             alert(JSON.stringify(values, null, 2));
-
-
-            axios.post('/api/login', values,
+            axios.post('http://localhost:5050/api/login', values,
                 // {
                 //     headers: {
                 //         'Accept': 'application/json',
