@@ -1,7 +1,7 @@
 [
     {
         "productid": 10001,
-        "productAvailability": false,
+        "productAvailability": true,
         "accountpricevisibility": true,
         "accountPrice": 2500,
         "primaryAccount": true,
@@ -81,7 +81,7 @@
         ]
     },{
         "productid": 10004,
-        "productAvailability": false,
+        "productAvailability": true,
         "accountpricevisibility": true,
         "accountPrice": 2000,
         "primaryAccount": true,
@@ -161,7 +161,7 @@
         ]
     },{
         "productid": 10007,
-        "productAvailability": false,
+        "productAvailability": true,
         "accountpricevisibility": true,
         "accountPrice": 1500,
         "primaryAccount": true,
