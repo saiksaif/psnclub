@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 const Ps5Account = () => {
   const testDataUrl = 'https://raw.githubusercontent.com/saiksaif/psnclub/main/src/utils/testAccounts.json';
   const [filteredAccountData, setFilteredAccountData] = useState([]);
+  const ps5Exists = false;
+  const ps4Exists = false;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,9 +14,12 @@ const Ps5Account = () => {
 
         // Filter the account data based on "ps5Game" condition
         const filteredData = data.filter((account) =>
-          // account.gamelist.some((game) => game.ps5Game) &&
+          account.gamelist.some((game) => game.ps5Game) 
+          &&
           account.productAvailability
         );
+        // const filteredData = data;
+        
 
         setFilteredAccountData(filteredData);
       } catch (error) {
@@ -43,7 +48,13 @@ const Ps5Account = () => {
 
               <div>
                 <h2 className='accID'>Total Games: {account.gamelist.length}</h2> <hr />
-                <h2 className='accID'>Price: {account.accountPrice}</h2> <br />
+                <h2 className='accID'>Price: {account.accountPrice}</h2> <hr />
+              </div>
+
+              <div className='iconsContainer'>
+                {account.isPsPlus ? (<img src='/plus.png' className='psPlusIcon' />) : (<img src='/plusno.png' className='psPlusIcon' />)}
+                {account.isPsPlus ? (<img src='/plus.png' className='psPlusIcon' />) : (<img src='/plusno.png' className='psPlusIcon' />)}
+                {account.isPsPlus ? (<img src='/plus.png' className='psPlusIcon' />) : (<img src='/plusno.png' className='psPlusIcon' />)}
               </div>
 
               <div id={index}>
