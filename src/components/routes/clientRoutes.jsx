@@ -4,10 +4,10 @@ import NavbarMain from '../navs/navbarMain'
 import FooterMain from '../navs/footerMain'
 
 
-const ClientRoutes = ({ component: Component }) => {
+const ClientRoutes = ({ component: Component, open: open }) => {
   return (
     <div>
-        <NavbarMain />
+        <NavbarMain open={open} />
 
         {Component}
         

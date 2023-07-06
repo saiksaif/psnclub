@@ -36,15 +36,15 @@ const App = () => {
       
 
       <Routes>
-            <Route path='/' element={<ClientRoutes component={<Home />} />} />
+            <Route path='/' element={<ClientRoutes component={<Home />} open="homeA" />} />
 
             {/* If home or empty url then this */}
 
-            <Route path='/ps5-accounts' element={<ClientRoutes component={<Ps5Account />} />} />
-            <Route path='/ps4-accounts' element={<ClientRoutes component={<Ps4Account />} />} />
-            <Route path='/all-accounts' element={<ClientRoutes component={<AllAccount />} />} />
-            <Route path='/other-services' element={<ClientRoutes component={<OtherService />} />} />
-            <Route path='/search' element={<ClientRoutes component={<Search />} />} />
+            <Route path='/ps5-accounts' element={<ClientRoutes component={<Ps5Account />} open="ps5A" />} />
+            <Route path='/ps4-accounts' element={<ClientRoutes component={<Ps4Account />} open="ps4A" />} />
+            <Route path='/all-accounts' element={<ClientRoutes component={<AllAccount />} open="AllA" />} />
+            <Route path='/other-services' element={<ClientRoutes component={<OtherService />} open="OthA" />} />
+            <Route path='/search' element={<ClientRoutes component={<Search />} open="SearA" />} />
 
 
             <Route path='/login' element={<AdminRoutes component={<Login />} />} />

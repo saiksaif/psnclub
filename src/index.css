@@ -93,7 +93,8 @@ body {
   /* height: 25px; */
   /* border: 1px solid red; */
 } .centerNavBtnsA:hover {
-  border-bottom: 3px solid #0d3068;
+  /* border-bottom: 3px solid #0d3068; */
+  border-bottom: 3px solid #2155a3;
 }
 @media (max-width: 768px) {
   .hidden-sm {
@@ -120,7 +121,11 @@ body {
   /* height: 25px; */
   /* border: 1px solid red; */
 } .endNavBtnsA:hover {
-  border-bottom: 3px solid #0d3068;
+  border-bottom: 3px solid #2155a3;
+  /* border-bottom: 3px solid #0d3068; */
+}
+.selectedNav {
+  border-bottom: 3px solid #2155a3;
 }
 
 /* //////////////   Footer Main   /////////////////// */

@@ -49,6 +49,7 @@ const Ps5Account = () => {
               <div id={index}>
               
                 <dialog className='dialogBox' id={index+`dialog`}>
+                {account.gamelist[0].imageLink.toString()}
                   <p>Primary Account: {account.primaryAccount.toString()}</p>
                   <p>Secondary Account: {account.secondaryAccount.toString()}</p>
                   <p>PS Plus: {account.isPsPlus.toString()}</p>
