@@ -50,7 +50,7 @@ const Login = () => {
                     // navigate('/cart')
                 )
                 .catch(error => {
-                    console.error('There was an error!', error);
+                    console.error('There was an erro    r!', error);
                     alert("Please Enter Valid Email or Password")
                 });
         },
@@ -60,7 +60,7 @@ const Login = () => {
         if (token) {
             localStorage.setItem('userToken', token)
             // auth.login(token)
-            navigate('/')
+            navigate('/admin-dashboard')
         }
         else {
             alert("Issue with Connecting the Server")
@@ -110,9 +110,9 @@ const Login = () => {
                                     />
                                 </div>
                                 <a className='flex justify-end' href='/signup'>Don't Have Account?Register</a>
-                                <Button color="primary" variant="contained" fullWidth type="submit" className='absolute  bottom-[0px] left-1/2 w-80 pt-2 pb-2 -translate-x-1/2 rounded-3xl border-2 bg-gradient-to-r from-[#1c1d1f] via-[#657dad] via-[#1c1d1f] to-[#767c85]  hover:bg-[#10396d]'>
+                                <button color="primary" variant="contained" fullWidth type="submit" className='absolute  bottom-[0px] left-1/2 w-80 pt-2 pb-2 -translate-x-1/2 rounded-3xl border-2 bg-gradient-to-r from-[#1c1d1f] via-[#657dad] via-[#1c1d1f] to-[#767c85]  hover:bg-[#10396d]'>
                                     Login
-                                </Button>
+                                </button>
                             </div>
                         </div>
                     </div>
