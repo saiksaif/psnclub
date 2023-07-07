@@ -13,7 +13,7 @@ body {
   width: 100%;
   background-image: linear-gradient(120deg, #000, #0d3068, #10397c, #2166a3, #236fb1);
   background-size: 200% 200%;
-  animation: bgAnimatedGradient 10s infinite ease;
+  animation: bgAnimatedGradient 10s infinite ease-in-out;
 }
 
 @keyframes bgAnimatedGradient {
@@ -139,8 +139,8 @@ body {
 
 /* //////////////   Home Main   /////////////////// */
 
-.homeMain {
-}
+/* .homeMain {
+} */
 
 /* //////////////   Home Body   /////////////////// */
 
@@ -629,7 +629,7 @@ body {
 }
 
 /* All Accounts CSS */
-body {background-color : #ededed; font-family : "Open Sans", sans-serif;}
+/* body {background-color : #ededed; font-family : "Open Sans", sans-serif;} */
 
 h1 {padding: 40px; text-align: center; font-size: 1.5em;}
 
