@@ -1,30 +1,29 @@
-import React, {useState, useNavigate} from 'react'
+import React, {useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import {useHistory} from 'react-router';
 import Search from '../client/search';
 import ClientRoutes from '../routes/clientRoutes';
 
 const NavbarMain = ({open: Open }) => {
   const [searchKey, setSearchKey] = useState(null);
-  // const history = useHistory();
+  const navigate = useNavigate();
   
   function showModalPop() {
-    // console.warn("1")
     document.getElementById('dialogNav2').classList.toggle("visible");
-    // console.warn("2")
     document.getElementById("customBackdrop").classList.toggle("visible");
   }
 
   function keyDownOnSearch(event) {
     setSearchKey(event.target.value);
-    // console.warn(event.target.value);
   }
   function searchForKey() {
     console.log(searchKey);
-    // history.push("/search", { searchKey: searchKey });
-    window.location.href = `/search?searchKey=${searchKey}`;
+    // window.location.href = `/search?searchKey=${searchKey}`;
+    navigate("/search", {
+      state: searchKey,
+    });
   }
 
   return (
