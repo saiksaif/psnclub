@@ -401,11 +401,18 @@ body {
 }
 .gamelistInstance {
   margin: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 15px;
+  border-radius: 15px;
+  background: linear-gradient(120deg, #10397c, #236fb1);
 } .gamelistItem {
+  width: 300px;
   color: black;
-  border: 1px solid black;
   border-radius: 15px;
   margin: 2px;
+  padding: 7px;
   background-color: white;
 }
 .gamePic {
@@ -447,17 +454,77 @@ body {
   top: 0;
   left: 0;
   z-index: 2;
-}.dialogBox {
+}
+.dialogBox {
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 5px 5px 10px #1c1c1c7d;
   width: 80%;
-  max-height: 60vh;
+  height: 85vh;
   overflow-y: auto;
   display: none;
   position: absolute;
-  top: 10vw;
+  top: 4vw;
   z-index: 5;
+}
+.topSectionDialog {
+  padding: 7px;
+  text-align: left;
+}.topSectionDialog button {
+  float: right;
+  font-size: larger;
+}
+.accFeatures {
+  text-align: left;
+}.accFeaHead {
+  padding: 7px;
+  text-align: left;
+}.accFeaStats {
+  padding: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.primAcc {
+  min-width: 250px;
+  width: fit-content;
+  padding: 7px;
+  margin: 5px;
+  border-radius: 7px;
+  color: white;
+  background-color: #2665c2;
+}.seconAcc {
+  min-width: 250px;
+  width: fit-content;
+  padding: 7px;
+  margin: 5px;
+  border-radius: 7px;
+  color: white;
+  background-color: rgb(23, 141, 23);
+}
+.accPsPlus {
+  line-height: 30px;
+  min-width: 250px;
+  width: fit-content;
+  padding: 7px;
+  margin: 5px;
+  border-radius: 7px;
+  color: white;
+  background: linear-gradient(180deg, #ffe344, #e2ca3e);
+}
+.accRateDetails {
+  line-height: 30px;
+  min-width: 250px;
+  width: fit-content;
+  padding: 7px;
+  margin: 5px;
+  border-radius: 7px;
+  color: white;
+  background: linear-gradient(140deg, #0d3068, #2665c2);
+}
+.psPlusIcon2 {
+  display: inline;
+  height: 20px;
 }
 .Notvisible {
   display: none;

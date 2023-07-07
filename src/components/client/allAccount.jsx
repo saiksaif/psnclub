@@ -73,25 +73,53 @@ const AllAccount = () => {
               <div id={index}>
               
                 <dialog className='dialogBox' id={index+`dialog`}>
-                {account.gamelist[0].imageLink.toString()}
-                  <p>Primary Account: {account.primaryAccount.toString()}</p>
-                  <p>Secondary Account: {account.secondaryAccount.toString()}</p>
-                  <p>PS Plus: {account.isPsPlus.toString()}</p>
-                  <p>PS Plus Expiry: {account.psplusExp1ry}</p>
-                  <ul className='gamelistInstance'>
+                  <div className="topSectionDialog">
+                    Account ID - {account.productid}
+                    <button onClick={()=>showModalPop(index)}>❌</button>
+                  </div>
+                  <hr />
+                  <div className="accFeatures">
+                    <div className="accFeaHead">Account Features:</div>
+                    <div className="accFeaStats">
+                      <div className="availableAccTypes">
+                        {account.primaryAccount ? 
+                        (<div className="primAcc">Primary Account ✅</div>) : 
+                        (<div className="primAcc">Primary Account 🚫</div>)}
+                        {account.secondaryAccount ? 
+                        (<div className="seconAcc">Secondary Account ✅</div>) : 
+                        (<div className="seconAcc">Secondary Account 🚫</div>)}
+                      </div>
+                      <div className="accPsPlus">
+                        PS Plus : {account.isPsPlus ? 
+                        (<><img src='/plus.png' className='psPlusIcon2' /><br />
+                        Expiry Date: {account.psplusExp1ry}</>) : 
+                        (<>No PS Plus</>)}
+                      </div>
+                      <div className="accRateDetails">
+                        Current Price : <br />{account.accountpricevisibility ? 
+                        (<>{account.accountPrice} PKR</>) : 
+                        (<>Contact for Price</>)}
+                      </div>
+                    </div>
+                  </div>
+                  <div className='gamelistInstance'>
                     {account.gamelist.map((game, gameIndex) => (
-                      <li className='gamelistItem' key={gameIndex}>
-                        <h4>Game: {game.gameName}</h4>
-                        <p>Description: {game.description}</p>
-                        <p>Image Link: {game.imageLink}</p>
-                        <p>PSA Game: {game.ps4Game.toString()}</p>
-                        <p>PS5 Game: {game.ps5Game.toString()}</p>
-                      </li>
+                      <div className='gamelistItem' key={gameIndex}>
+                        <div className="gamePic" style={{ backgroundImage: `url(${game.imageLink})`}}></div>
+                        <p><strong>{game.gameName}</strong> : {game.description}</p> <hr />
+                        <div className='iconsContainer'>
+                          {game.ps4Game ? (<img src='/ds4png.png' className='consoleIcon' />) : (<></>)}
+                          {game.ps5Game ? (<img src='/ds5png.png' className='consoleIcon' />) : (<></>)}
+                        </div>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
 
-                  <form method="dialog">
-                    <button onClick={()=>showModalPop(index)}>CLOSE</button>
+                  <form method="#" className="purchasingForm">
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Name" />
+                    <input type="tel" name="phone" placeholder="Phone No." />
+                    {/* <button onClick={()=>showModalPop(index)}>CLOSE</button> */}
                   </form>
                 </dialog>
 
