@@ -2,7 +2,7 @@
   "name": "psnclub1",
   "version": "0.1.0",
   "private": true,
-    "dependencies": {
+  "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.13.7",
@@ -21,6 +21,7 @@
     "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
+    "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.14.1",
     "react-scripts": "^5.0.1",
     "react-scroll-trigger": "^0.6.14",

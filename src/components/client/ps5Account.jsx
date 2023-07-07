@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { baseURL } from '../../utils/constant';
 
+import SpinnerLoader from '../other/spinnerLoader';
+
 const Ps5Account = () => {
   const mainURL = `${baseURL}/getProducts`;
   const testDataUrl = 'https://raw.githubusercontent.com/saiksaif/psnclub/main/src/utils/testAccounts.json';
   const [filteredAccountData, setFilteredAccountData] = useState([]);
+  const [load, setLoad] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +22,8 @@ const Ps5Account = () => {
           account.productAvailability
         );        
 
+        setLoad(false);
+        // console.warn(load);
         setFilteredAccountData(filteredData);
       } catch (error) {
         console.error('Error fetching account data:', error);
@@ -46,6 +51,8 @@ const Ps5Account = () => {
 
   return (
     <div className='ps5AccountsPage'>
+     {load? <SpinnerLoader loading={load} /> :
+      
       <div className="inPs5Accounts">
         <div id='customBackdrop' className='Notvisible'></div>
         <div className='accountInstanceContainer'>
@@ -124,6 +131,7 @@ const Ps5Account = () => {
           ))}
         </div>
       </div>
+      }
     </div>
   );
 };
