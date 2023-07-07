@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { baseURL } from "../../utils/constant";
 
 const AllAccount = () => {
+  const mainURL = `${baseURL}/getProducts`;
   const testDataUrl = 'https://raw.githubusercontent.com/saiksaif/psnclub/main/src/utils/testAccounts.json';
   const [filteredAccountData, setFilteredAccountData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(testDataUrl);
+        const response = await fetch(mainURL);
         const data = await response.json();
 
-        // Filter the account data based on "ps5Game" condition
+        // console.log(data)
+        // Filter the account data based on  "ps5Game" condition
         const filteredData = data.filter((account) =>
           account.productAvailability
         );        
@@ -77,7 +80,6 @@ const AllAccount = () => {
                     Account ID - {account.productid}
                     <button onClick={()=>showModalPop(index)}>❌</button>
                   </div>
-                  <hr />
                   <div className="accFeatures">
                     <div className="accFeaHead">Account Features:</div>
                     <div className="accFeaStats">
@@ -114,11 +116,12 @@ const AllAccount = () => {
                       </div>
                     ))}
                   </div>  <br />
-                  <hr />
-                  <div className="purchaseTitle">Purchase Account:</div>
+                  {/* <hr /> 
+                  <br /> */}
+                  <div className="purchaseTitle">Purchase Account :</div>
                   <form action='#' method="POST" className="purchasingForm">
                     <input type="text" name='name' placeholder="Name" required minLength={4} maxLength={22} />
-                    <input type="email" name='email' placeholder="Name" required minLength={7} maxLength={32} />
+                    <input type="email" name='email' placeholder="Email" required minLength={7} maxLength={32} />
                     <input type="tel" name="phone" placeholder="Phone No." required minLength={9} maxLength={13} />
 
                     <button type="submit">Request Purchase</button>

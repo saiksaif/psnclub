@@ -1,13 +1,35 @@
-import React from 'react'
+import React, {useState, useNavigate} from 'react'
 import { AiOutlineSearch } from 'react-icons/ai';
 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+// import {useHistory} from 'react-router';
+import Search from '../client/search';
+import ClientRoutes from '../routes/clientRoutes';
 
 const NavbarMain = ({open: Open }) => {
+  const [searchKey, setSearchKey] = useState(null);
+  // const history = useHistory();
   
+  function showModalPop() {
+    // console.warn("1")
+    document.getElementById('dialogNav2').classList.toggle("visible");
+    // console.warn("2")
+    document.getElementById("customBackdrop").classList.toggle("visible");
+  }
+
+  function keyDownOnSearch(event) {
+    setSearchKey(event.target.value);
+    // console.warn(event.target.value);
+  }
+  function searchForKey() {
+    console.log(searchKey);
+    // history.push("/search", { searchKey: searchKey });
+    window.location.href = `/search?searchKey=${searchKey}`;
+  }
 
   return (
     <div className='navbarMain'>
+    <div id='customBackdrop' className='Notvisible'></div>
         <div className='navbarMain1'>
             <div>PSN CLUB</div>
         </div>
@@ -30,9 +52,24 @@ const NavbarMain = ({open: Open }) => {
             </div>
             
             <div className='endNavBtns fixSpace'>
-              <Link id='SearA' className={`centerNavBtnsA + ${'SearA' == Open ? "selectedNav" : ""}`} to='/search'>
+              <dialog className='dialogBox2' id='dialogNav2'>
+                  <div className="topSectionDialog2">
+                    SEARCH
+                    <button onClick={()=>showModalPop()}>❌</button>
+                  </div> <br />
+
+                  <form onSubmit={()=>searchForKey()} className='searchPop'>
+                    <input type="text" placeholder='Search Game...' required minLength={4} maxLength={16} onChange={(event)=>{keyDownOnSearch(event)}} />
+                    {/* <button onChange={()=>{setSearchKey()}}>SEARCH</button> */}
+                    <button className='searchBTN'>SEARCH</button>
+                  </form>
+              </dialog>
+              <button onClick={()=>showModalPop()} className='centerNavBtnsA'>
                 <AiOutlineSearch size={25} />
-              </Link>
+              </button>
+              {/* <Link id='SearA' className={`centerNavBtnsA + ${'SearA' == Open ? "selectedNav" : ""}`} to='/search'>
+                <AiOutlineSearch size={25} />
+              </Link> */}
             </div>
         </div>
     </div>
