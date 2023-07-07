@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 const Ps5Account = () => {
   const testDataUrl = 'https://raw.githubusercontent.com/saiksaif/psnclub/main/src/utils/testAccounts.json';
   const [filteredAccountData, setFilteredAccountData] = useState([]);
-  const ps5Exists = false;
-  const ps4Exists = false;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,9 +15,7 @@ const Ps5Account = () => {
           account.gamelist.some((game) => game.ps5Game) 
           &&
           account.productAvailability
-        );
-        // const filteredData = data;
-        
+        );        
 
         setFilteredAccountData(filteredData);
       } catch (error) {
@@ -29,6 +25,17 @@ const Ps5Account = () => {
 
     fetchData();
   }, []);
+
+  function checkForGame(gameArray) {
+    for (var i = 0; i < gameArray.length; i++) {
+      if (gameArray[i].ps4Game === true) {
+        return true;
+        // break;
+      } else {
+        return false;
+      }
+    }
+  }
 
   function showModalPop(index) {
     document.getElementById(index+`dialog`).classList.toggle("visible");
@@ -42,18 +49,15 @@ const Ps5Account = () => {
         <div className='accountInstanceContainer'>
           {filteredAccountData.map((account, index) => (
             <div className='accountInstance' key={index}>
-              <h2 className='accID'>Account ID: {account.productid}</h2> 
+              {/* <h2 className='accID'>Account ID: {account.productid}</h2>  */}
 
               <div className="gamePic" style={{ backgroundImage: `url(${account.gamelist[0].imageLink})`}}></div>
 
-              <div>
-                <h2 className='accID'>Total Games: {account.gamelist.length}</h2> <hr />
-                <h2 className='accID'>Price: {account.accountPrice}</h2> <hr />
-              </div>
+              <h2 className='accDets'><div>{account.gamelist.length} Games</div><div>{account.accountPrice} PKR</div></h2> <hr />
 
               <div className='iconsContainer'>
-                {account.isPsPlus ? (<img src='/plus.png' className='psPlusIcon' />) : (<img src='/plusno.png' className='psPlusIcon' />)}
-                {account.isPsPlus ? (<img src='/plus.png' className='psPlusIcon' />) : (<img src='/plusno.png' className='psPlusIcon' />)}
+                <img src='/ds5png.png' className='consoleIcon' />
+                {checkForGame(account.gamelist) ? (<img src='/ds4png.png' className='consoleIcon' />) : (<></>)}
                 {account.isPsPlus ? (<img src='/plus.png' className='psPlusIcon' />) : (<img src='/plusno.png' className='psPlusIcon' />)}
               </div>
 
@@ -71,7 +75,7 @@ const Ps5Account = () => {
                         <h4>Game: {game.gameName}</h4>
                         <p>Description: {game.description}</p>
                         <p>Image Link: {game.imageLink}</p>
-                        <p>PSA Game: {game.psaGame.toString()}</p>
+                        <p>PSA Game: {game.ps4Game.toString()}</p>
                         <p>PS5 Game: {game.ps5Game.toString()}</p>
                       </li>
                     ))}

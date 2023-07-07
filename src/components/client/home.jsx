@@ -27,7 +27,8 @@ const Home = () => {
       <div className='HomePageMain'>
         <div className="homePageContent">
           <div className="HomePageTopBanner">
-              <img src="/homebg.png" alt="Home Banner" />
+            <div className='HPTBImg'></div>
+              {/* <img src="/homebg.png" alt="Home Banner" /> */}
           </div>
 
           <br />
@@ -58,16 +59,7 @@ const Home = () => {
                 <div className='countGSIn'>
                   {counterOn2 && (<CountUp start={0} end={156} duration={2} delay={0} ref={(countUp) => {this.countUp = countUp;}}/>)}+
                 </div>
-              </ScrollTrigger>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-              <div>Happy<br />Customers</div>
-              <div>&nbsp;&nbsp;:&nbsp;&nbsp;</div>
-              <ScrollTrigger onEnter={() => setCounterOn2(true)} onExit={() => setCounterOn2(false)} triggerOnce={true}>
-                <div className='countGSIn'>
-                  {counterOn2 && (<CountUp start={0} end={156} duration={2} delay={0} ref={(countUp) => {this.countUp = countUp;}}/>)}+
-                </div>
-              </ScrollTrigger>
-            </div> */}
+              </ScrollTrigger>*/}
           </div>
 
           <div className='HomeCategoryBoxes'>

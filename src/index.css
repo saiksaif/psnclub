@@ -154,60 +154,94 @@ body {
 
 .HomePageTopBanner {
   width: 100%;
-} .HomePageTopBanner img {
   padding: 5vw;
-  width: 100%;  
+  /* object-fit: cover; */
+} .HPTBImg {
+  background: url('https://raw.githubusercontent.com/saiksaif/psnclub/main/public/homebg.png');
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  width: 100%;
+  height: 400px;
 }
 
 .HomePageCrossSection {
-  padding: 5vw;
+  /* position: fixed; */
+  height: 1;
 }
 
 .ps4Img img {
   height: 250px;
+  float: right;
 }
 .ps5Img img {
   height: 360px;
+  float: right;
 }
 .ps4Img {
+  width: 100vw;
   height: 0;
   position: relative;
-  left: 550px;
-  top: -340px;
+  right: 25%;
+  bottom: 60px;
+  margin-bottom: -00px;
 }
 .ps5Img {
+  width: 100vw;
   height: 0;
   position: relative;
-  left: 900px;
-  top: -430px;
+  right: 20%;
+  bottom: 150px;
+  margin-bottom: -200px;
 }
-
-.countGS {
-  width: 100%;
-  height: 90px;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  height: fit-content;
-  font-size: 30px;
-  font-weight: 800;
-  color: white;
-  /* border: 1px solid red; */
-} .countGSIn {
-  font-weight: 600;
-  font-size: 80px;
-} #countGSIn1 {
-  margin-left: 140px;
-} #countGSIn2 {
-  margin-left: 300px;
+@media screen and (max-width: 1050px) {
+  .ps4Img img {
+    height: 200px;
+    float: left;
+  }
+  .ps5Img img {
+    height: 310px;
+    float: right;
+  }
+  .ps4Img {
+    left: 5%;
+    bottom: 00px;
+  }
+  .ps5Img {
+    right: 10%;
+    bottom: 90px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .ps4Img img {
+    height: 130px;
+    float: left;
+  }
+  .ps5Img img {
+    height: 200px;
+    float: right;
+  }
+  .ps4Img {
+    left: 4%;
+    bottom: -10px;
+  }
+  .ps5Img {
+    right: 9%;
+    bottom: 40px;
+  }
 }
 
 .HomeCategoryBoxes {
   padding: 0 7vw;
+  margin-top: 0;
   margin-bottom: 7vw;
   min-height: 400px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  /* border: 1px solid purple; */
 } 
 
 .ps5GamesBoxHome {
@@ -227,23 +261,55 @@ body {
   border-radius: 15px;
   transition: 0.2s;
 }
-.ps5GamesBoxHome:hover {  
-  box-shadow: 8px 8px 23px #0000007a;
-} .ps4GamesBoxHome:hover {
-  box-shadow: 8px 8px 23px #0000007a;
-}
+.ps5GamesBoxHome:hover, .ps4GamesBoxHome:hover { box-shadow: 8px 8px 23px #0000007a; }
 
 #dsController5 {
   position: relative;
-  left: 430px;
+  left: 200px;
+  float: right;
   top: 60px;
   rotate: -15deg;
 }
 #dsController4 {
   position: relative;
-  left: -240px;
+  right: 200px;
+  float: left;
   top: 350px;
   rotate: 15deg;
+}
+
+
+@media screen and (max-width: 1290px) {
+  #dsController5 {
+    left: 100px;
+  }
+  #dsController4 {
+    right: 100px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .HomeCategoryBoxes {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .ps5GamesBoxHome, .ps4GamesBoxHome {
+    width: 60vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .HomeCategoryBoxes {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .ps5GamesBoxHome, .ps4GamesBoxHome {
+    width: 80vw;
+  }
+  #dsController5 {
+    left: 100px;
+  }
+  #dsController4 {
+    right: 100px;
+  }
 }
 
 .middleSectionExplore {
@@ -253,11 +319,27 @@ body {
   margin: 7vw;
   padding: 30px 20px;
   border-radius: 15px;
+  height: fit-content;
   background-color: #fff;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
+/* .othLink {
+  border: 1px solid red;
+}
+.othLink img {
+  border: 1px solid red;
+} */
 
+@media screen and (max-width: 650px) {
+  .HomePageOtherServices {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+}
 
 .ps5AccountsPage {
   min-height: 500px;
@@ -272,9 +354,9 @@ body {
   align-items: center;
   text-align: center;
 }
-.footerLogo img {
+/* .footerLogo img {
 
-}
+} */
 .centerPagesFooter {
   display: flex;
   flex-direction: row;
@@ -328,11 +410,24 @@ body {
 }
 .gamePic {
   width: 100%;
-  height: 200px;
+  height: 250px;
   background-color: silver;
   background-position: center;
   background-size: cover;
   border-radius: 7px;
+}
+.accDets {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.accDets div {
+  width: 48%;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0 5px;
+  border-radius: 7px;
+  background-color: #f4d942;
+  background: linear-gradient(180deg, #ffe344, #e2ca3e);
 }
 .accDetailsBtn {
   width: 100%;
@@ -378,13 +473,72 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   /* border: 1px solid black; */
 }.iconsContainer img {
-  margin: 0 7px;
-/* }
-.psPlusIcon { */
+  margin: 0 15px;
+}
+.consoleIcon {
+  width: 50px;
+  height: fit-content;
+}
+.psPlusIcon {
   height: 30px;
   width: 30px;
+}
+
+/* Other Services Page */
+
+.otherServicesPg {
+  min-height: 500PX;
+  padding: 7vh 7vw;
+}
+.otherServItems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  min-height: 100px;
+  padding: 15px;
+  color: black;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px #1c1c1c7d;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.otherServItem {
+  width: 300px;
+  height: 160px;
+  cursor: pointer;
+  background: linear-gradient(120deg, #10397c, #236fb1);
+  /* background-color: #10397c; */
+  /* background-color: #252525; */
+  box-shadow: 5px 5px 10px #1c1c1c7d;
+  color: white;
+  border-radius: 7px;
+  transition: 0.2s;
+}
+.otherServItem:hover {
+  box-shadow: 5px 5px 15px #1c1c1c;
+}
+.otherServItem h1 {
+  /* padding: 7px; */
+  height: 30px;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: left;
+}
+.otherServItem p {
+  padding: 0 40px;
+  color: transparent;
+  transition: 0.2s;
+}
+.otherServItem:hover > p {
+  color: white;
 }
 
 /* All Accounts CSS */
