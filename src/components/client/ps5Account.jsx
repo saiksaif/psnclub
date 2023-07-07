@@ -63,26 +63,56 @@ const Ps5Account = () => {
 
               <div id={index}>
               
-                <dialog className='dialogBox' id={index+`dialog`}>
-                {account.gamelist[0].imageLink.toString()}
-                  <p>Primary Account: {account.primaryAccount.toString()}</p>
-                  <p>Secondary Account: {account.secondaryAccount.toString()}</p>
-                  <p>PS Plus: {account.isPsPlus.toString()}</p>
-                  <p>PS Plus Expiry: {account.psplusExp1ry}</p>
-                  <ul className='gamelistInstance'>
+              <dialog className='dialogBox' id={index+`dialog`}>
+                  <div className="topSectionDialog">
+                    Account ID - {account.productid}
+                    <button onClick={()=>showModalPop(index)}>❌</button>
+                  </div>
+                  <hr />
+                  <div className="accFeatures">
+                    <div className="accFeaHead">Account Features:</div>
+                    <div className="accFeaStats">
+                      <div className="availableAccTypes">
+                        {account.primaryAccount ? 
+                        (<div className="primAcc">Primary Account ✅</div>) : 
+                        (<div className="primAcc">Primary Account 🚫</div>)}
+                        {account.secondaryAccount ? 
+                        (<div className="seconAcc">Secondary Account ✅</div>) : 
+                        (<div className="seconAcc">Secondary Account 🚫</div>)}
+                      </div>
+                      <div className="accPsPlus">
+                        PS Plus : {account.isPsPlus ? 
+                        (<><img src='/plus.png' className='psPlusIcon2' /><br />
+                        Expiry Date: {account.psplusExp1ry}</>) : 
+                        (<>No PS Plus</>)}
+                      </div>
+                      <div className="accRateDetails">
+                        Current Price : <br />{account.accountpricevisibility ? 
+                        (<>{account.accountPrice} PKR</>) : 
+                        (<>Contact for Price</>)}
+                      </div>
+                    </div>
+                  </div>
+                  <div className='gamelistInstance'>
                     {account.gamelist.map((game, gameIndex) => (
-                      <li className='gamelistItem' key={gameIndex}>
-                        <h4>Game: {game.gameName}</h4>
-                        <p>Description: {game.description}</p>
-                        <p>Image Link: {game.imageLink}</p>
-                        <p>PSA Game: {game.ps4Game.toString()}</p>
-                        <p>PS5 Game: {game.ps5Game.toString()}</p>
-                      </li>
+                      <div className='gamelistItem' key={gameIndex}>
+                        <div className="gamePic" style={{ backgroundImage: `url(${game.imageLink})`}}></div>
+                        <p><strong>{game.gameName}</strong> : {game.description}</p> <hr />
+                        <div className='iconsContainer'>
+                          {game.ps4Game ? (<img src='/ds4png.png' className='consoleIcon' />) : (<></>)}
+                          {game.ps5Game ? (<img src='/ds5png.png' className='consoleIcon' />) : (<></>)}
+                        </div>
+                      </div>
                     ))}
-                  </ul>
+                  </div>  <br />
+                  <hr />
+                  <div className="purchaseTitle">Purchase Account:</div>
+                  <form action='#' method="POST" className="purchasingForm">
+                    <input type="text" name='name' placeholder="Name" required minLength={4} maxLength={22} />
+                    <input type="email" name='email' placeholder="Name" required minLength={7} maxLength={32} />
+                    <input type="tel" name="phone" placeholder="Phone No." required minLength={9} maxLength={13} />
 
-                  <form method="dialog">
-                    <button onClick={()=>showModalPop(index)}>CLOSE</button>
+                    <button type="submit">Request Purchase</button>
                   </form>
                 </dialog>
 

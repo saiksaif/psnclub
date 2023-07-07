@@ -23,7 +23,7 @@ import Login from './components/admin/login';
 import Accounts from './components/admin/accounts'
 import Purchases from './components/admin/purchases'
 import OtherDetails from './components/admin/otherdetails'
-import Booking from './components/admin/booking'
+// import Booking from './components/admin/booking'
 import Dashboard from './components/admin/dasboard';
 
 import Home from './components/client/home';
@@ -51,7 +51,7 @@ const App = () => {
             <Route path='/admin-accounts' element={<AdminRoutes component={<Accounts />} />} />
             <Route path='/admin-purchases' element={<AdminRoutes component={<Purchases />} />} />
             <Route path='/admin-other-details' element={<AdminRoutes component={<OtherDetails />} />} />
-            <Route path='/admin-booking' element={<AdminRoutes component={<Booking />} />} />
+            {/* <Route path='/admin-booking' element={<AdminRoutes component={<Booking />} />} /> */}
             <Route path='/admin-dashboard' element={<AdminRoutes component={<Dashboard />} />} />
       </Routes>
       

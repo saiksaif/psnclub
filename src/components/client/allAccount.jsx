@@ -113,13 +113,15 @@ const AllAccount = () => {
                         </div>
                       </div>
                     ))}
-                  </div>
+                  </div>  <br />
+                  <hr />
+                  <div className="purchaseTitle">Purchase Account:</div>
+                  <form action='#' method="POST" className="purchasingForm">
+                    <input type="text" name='name' placeholder="Name" required minLength={4} maxLength={22} />
+                    <input type="email" name='email' placeholder="Name" required minLength={7} maxLength={32} />
+                    <input type="tel" name="phone" placeholder="Phone No." required minLength={9} maxLength={13} />
 
-                  <form method="#" className="purchasingForm">
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Name" />
-                    <input type="tel" name="phone" placeholder="Phone No." />
-                    {/* <button onClick={()=>showModalPop(index)}>CLOSE</button> */}
+                    <button type="submit">Request Purchase</button>
                   </form>
                 </dialog>
 
