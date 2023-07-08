@@ -131,6 +131,7 @@ const AllAccount = () => {
                     <input type="tel" name="phone" placeholder="Phone No." required minLength={9} maxLength={13} />
 
                     <button type="submit">Request Purchase</button>
+                    {/* https://api.whatsapp.com/send?phone=3044302391&text=Hi */}
                   </form>
                 </dialog>
 

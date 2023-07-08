@@ -8,10 +8,9 @@ import { baseURL } from '../../utils/constant';
 
 const Search = () => {
   const location = useLocation();
-  const { state } = location;
-  
-  let gameName = state;
-  // console.warn(state)
+  const { state } = location;  
+  // console.warn(state);
+  let searckKeyword = state;
 
   const mainURL = `${baseURL}/getProducts`;
   const testDataUrl = 'https://raw.githubusercontent.com/saiksaif/psnclub/main/src/utils/testAccounts.json';
@@ -21,12 +20,20 @@ const Search = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(mainURL);
+        const response = await fetch(testDataUrl);
         const data = await response.json();
 
-        const filteredData = data.filter((account) =>
-          account.gamelist.map((game) => game.gameName)      
-        );
+        // const filteredData = data.filter((account) =>
+        //   account.gamelist.some((game) => game.gameName)
+        //   // searckKeyword
+        // );
+        const filteredData = data.filter((account) => {
+          const gameNames = account.gamelist.map((game) => game.gameName);
+          const searchResults = gameNames.some((gameName) => gameName.toLowerCase().includes(searckKeyword.toLowerCase()));
+
+          console.log("GAMES : " + searchResults);
+          return (searchResults);
+        });
 
         setLoad(false);
         setFilteredAccountData(filteredData);
@@ -36,7 +43,7 @@ const Search = () => {
     };
 
     fetchData();
-  }, []);
+  }, [searckKeyword]);
 
   function checkForGame5(gameArray) {
     for (var i = 0; i < gameArray.length; i++) {
@@ -66,8 +73,9 @@ const Search = () => {
 
   return (
     <div className='ps5AccountsPage'>
-    {gameName}
-    {load? <SpinnerLoader loading={load} /> :
+      {searckKeyword ? <><div className='pageTitleTop'>Search Results: {searckKeyword}</div>
+    
+      {load? <SpinnerLoader loading={load} /> :
       
       <div className="inPs5Accounts">
         <div id='customBackdrop' className='Notvisible'></div>
@@ -149,6 +157,7 @@ const Search = () => {
         </div>
       </div>
     }
+    </> : <div className='showEpmtySearch'>Type something in the search bar first... 😥😓</div>}
     </div>
   );
 }

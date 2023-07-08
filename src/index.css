@@ -1,7 +1,34 @@
+button:enabled {
+  outline: none;
+}
+.pageTitleTop {
+  margin: 0 2vw;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.showEpmtySearch {
+  font-size: 2rem;
+  width: fit-content;
+  padding: 20px 30px;
+  margin: 17vh auto;
+  margin-bottom: 30vh;
+
+  
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.5);
+  /* border-radius: 12px; */
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.125);
+  border-radius: 15px;
+}
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow-y: scroll;
   background-color: #000;
 }
 .animatedBg {
@@ -485,10 +512,12 @@ body {
     background-color: rgba(17, 25, 40, 0.75);
     /* border-radius: 12px; */
     border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.125);
 
   border-radius: 15px;
-  box-shadow: 5px 5px 10px #1c1c1c7d;
+  /* box-shadow: 5px 5px 10px #1c1c1c7d; */
   width: 80%;
+  /* margin-bottom: 450px; */
   height: 85vh;
   overflow-y: auto;
   display: none;
@@ -502,9 +531,10 @@ body {
     background-color: rgba(17, 25, 40, 0.75);
     /* border-radius: 12px; */
     border: 1px solid rgba(255, 255, 255, 0.125);
+    box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.125);
 
   border-radius: 15px;
-  box-shadow: 5px 5px 10px #1c1c1c7d;
+  /* box-shadow: 5px 5px 10px #1c1c1c7d; */
   width: 80%;
   height: fit-content;
   overflow-y: auto;
@@ -519,25 +549,34 @@ body {
   /* background-color: white; */
   border-radius: 15px;
   padding: 7px;
-  padding-bottom: 12px;
-  font-weight: 600;
-  text-align: left;
+  margin-bottom: 15px;
   border-radius: 15px 15px 0 0;
 }.topSectionDialog2 button {
   float: right;
   font-size: larger;
+}.topSectionDialog2 button:hover {
+  border-bottom: 2px solid red;
 }
 .topSectionDialog {
-  background-color: white;
+  /* background-color: white; */
+  /* background: linear-gradient(90deg, #fff, #00000000, #00000000); */
+  /* border-left: 1px solid white;
+  border-top: 1px solid white;
+  border-right: 1px solid white; */
+  color: white;
   border-radius: 15px;
   padding: 7px;
   padding-bottom: 12px;
+  font-size: larger;
   font-weight: 600;
   text-align: left;
   border-radius: 15px 15px 0 0;
 }.topSectionDialog button {
   float: right;
   font-size: larger;
+  border-bottom: 2px solid transparent;
+}.topSectionDialog button:hover {
+  border-bottom: 2px solid red;
 }
 .searchPop {
   width: 100%;
@@ -551,6 +590,7 @@ body {
   border-radius: 15px;
   font-size: large;
   font-family: Arial, Helvetica, sans-serif;
+  outline: none;
 }
 .searchBTN {
   text-align: center;
@@ -560,6 +600,12 @@ body {
   background: linear-gradient(120deg, #0d3068, #236fb1);
   font-family: Arial, Helvetica, sans-serif;
   color: white;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  transition: 0.3s ease-in-out;
+}
+.searchBTN:hover {
+  box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.2);
 }
 
 .accFeatures {
@@ -567,7 +613,12 @@ body {
 }.accFeaHead {
   padding: 7px;
   text-align: left;
-  background-color: white;
+  /* background-color: white; */
+  /* background: linear-gradient(90deg, #fff, #00000000, #00000000); */
+  /* border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white; */
+  color: white;
   border-radius: 0 0 15px 15px;
 }.accFeaStats {
   padding: 7px;
@@ -579,7 +630,7 @@ body {
   min-width: 250px;
   width: fit-content;
   padding: 7px;
-  margin: 5px;
+  margin: 5px 0;
   border-radius: 7px;
   color: white;
   background-color: #2665c2;
@@ -587,7 +638,7 @@ body {
   min-width: 250px;
   width: fit-content;
   padding: 7px;
-  margin: 5px;
+  margin: 5px 0;
   border-radius: 7px;
   color: white;
   background-color: rgb(23, 141, 23);
@@ -600,14 +651,14 @@ body {
   margin: 5px;
   border-radius: 7px;
   color: white;
-  background: linear-gradient(180deg, #ffe344, #e2ca3e);
+  background: linear-gradient(180deg, #ffe344, #baa532);
 }
 .accRateDetails {
   line-height: 30px;
   min-width: 250px;
   width: fit-content;
   padding: 7px;
-  margin: 5px;
+  margin: 5px 0;
   border-radius: 7px;
   color: white;
   background: linear-gradient(140deg, #0d3068, #2665c2);
@@ -717,7 +768,7 @@ body {
 /* All Accounts CSS */
 /* body {background-color : #ededed; font-family : "Open Sans", sans-serif;} */
 
-/* h1 {padding: 40px; text-align: center; font-size: 1.5em;} */
+h1 {padding: 40px;}
 
 li a {text-decoration : none; color : #171717;}
 

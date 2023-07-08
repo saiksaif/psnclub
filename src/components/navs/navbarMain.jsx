@@ -15,15 +15,19 @@ const NavbarMain = ({open: Open }) => {
     document.getElementById("customBackdrop").classList.toggle("visible");
   }
 
-  function keyDownOnSearch(event) {
-    setSearchKey(event.target.value);
-  }
+  // function keyDownOnSearch(event) {
+  //   setSearchKey(event.target.value);
+  // }
+
   function searchForKey() {
-    console.log(searchKey);
-    // window.location.href = `/search?searchKey=${searchKey}`;
+    if (document.getElementById('searchKeyword').value.length < 4) {
+      alert('Keyword length cannot be shorter than 4 letters')
+      return;
+    }
+    showModalPop();
     navigate("/search", {
-      state: searchKey,
-    });
+      state: document.getElementById('searchKeyword').value
+    }, { replace: true });
   }
 
   return (
@@ -53,17 +57,16 @@ const NavbarMain = ({open: Open }) => {
             <div className='endNavBtns fixSpace'>
               <dialog className='dialogBox2' id='dialogNav2'>
                   <div className="topSectionDialog2">
-                    SEARCH
                     <button onClick={()=>showModalPop()}>❌</button>
                   </div> <br />
 
-                  <form onSubmit={()=>searchForKey()} className='searchPop'>
-                    <input type="text" placeholder='Search Game...' required minLength={4} maxLength={16} onChange={(event)=>{keyDownOnSearch(event)}} />
+                  <div className='searchPop'>
+                    <input id='searchKeyword' type="text" placeholder='Search Game...' required minLength={4} maxLength={16} />
                     {/* <button onChange={()=>{setSearchKey()}}>SEARCH</button> */}
-                    <button className='searchBTN'>SEARCH</button>
-                  </form>
+                    <button onClick={()=>searchForKey()} className='searchBTN'>SEARCH</button>
+                  </div>
               </dialog>
-              <button onClick={()=>showModalPop()} className='centerNavBtnsA'>
+              <button id='SearA' className={`centerNavBtnsA + ${'SearA' == Open ? "selectedNav" : ""}`} onClick={()=>showModalPop()}>
                 <AiOutlineSearch size={25} />
               </button>
               {/* <Link id='SearA' className={`centerNavBtnsA + ${'SearA' == Open ? "selectedNav" : ""}`} to='/search'>
