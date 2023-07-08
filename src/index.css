@@ -717,7 +717,7 @@ body {
 /* All Accounts CSS */
 /* body {background-color : #ededed; font-family : "Open Sans", sans-serif;} */
 
-h1 {padding: 40px; text-align: center; font-size: 1.5em;}
+/* h1 {padding: 40px; text-align: center; font-size: 1.5em;} */
 
 li a {text-decoration : none; color : #171717;}
 
@@ -728,7 +728,7 @@ nav {
   margin : 40px auto; 
 }
 
-span {
+/* span {
   padding : 30px;
   background : #2d2f31; 
   color : white;
@@ -742,7 +742,7 @@ span::after {
   float: right;
   right: 10%;
   content: "+";
-}
+} */
 
 .slide {
   clear:both;

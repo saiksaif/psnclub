@@ -1,10 +1,8 @@
 import React from 'react'
-import Drawer from './assets/Drawer'
-import DetailForm from './assets/DetailForm'
 
 const Otherdetails = () => {
   return (
-    <Drawer><DetailForm/></Drawer>
+    <div>Otherdetails</div>
   )
 }
 

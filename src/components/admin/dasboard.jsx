@@ -1,39 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import '../admin/assets/AdminStyle.css'
+
+import Card from './assets/MainCard';
+import { getRequest } from '../api/getRequest';
+import Drawer from './assets/Drawer';
 
 const Dashboard = () => {
+  const [purchaseCount, setPurcaseCount] = useState(0)
+  const [productCount, setProductCount] = useState(0)
+  React.useEffect(()=>{
+    getRequest('getPurchase')
+    .then((res)=>{
+      setPurcaseCount(res.length);
+    }).catch((error)=>{console.log("erorr: ", error)})
+    getRequest('getProducts')
+    .then((res)=>{
+      setProductCount(res.length)
+    }).catch((error)=>{console.log("erorr: ", error)})
+  },[])
+
   return (
-    <div>
-      Dashboard
-    
-      {/* Number of Accounts Saved */}
-      <span>{}</span>
-      <br />
-
-      {/* Number of Purcases */}
-      <span>{}</span>
-      <br />
-
-      {/* Number of Bookings */}
-      <span>{}</span>
-      <br />
-
-      <a href="/admin-accounts">Manage Accounts</a>
-      <a href="/admin-purchases">Manage Purchases</a>
-      {/* <a href="/admin-booking">Manage Bookings</a> */}
-      <a href="/admin-accounts">Manage Details</a>
-
-      <a href="/">Signout</a>
-    </div>
-
-    
-  )
+    <>
+      {/* <SideNav><Card/></SideNav> */}
+      <Drawer><Card purchase={purchaseCount} product={productCount}/></Drawer>
+    </>
+  );
 }
 
 export default Dashboard
-
-/*
-  AREEBA
-
-  Perform read operations here
-  Should show number of accounts and other stats mentioned in documentation
-*/
