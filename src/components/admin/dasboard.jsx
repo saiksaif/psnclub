@@ -20,10 +20,12 @@ const Dashboard = () => {
   },[])
 
   return (
-    <>
+    <div className='dashboardMain'>
       {/* <SideNav><Card/></SideNav> */}
-      <Drawer><Card purchase={purchaseCount} product={productCount}/></Drawer>
-    </>
+      <Drawer>
+        <Card purchase={purchaseCount} product={productCount}/>
+      </Drawer>
+    </div>
   );
 }
 

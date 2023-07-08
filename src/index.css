@@ -28,19 +28,40 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: #000;
+  outline: none;
 }
-.animatedBg {
+.animatedBg2 {
+  /* border: 10px solid black; */
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
   background-color: #f2f;
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  /* bottom: 0; */
+  left: 0;
+  z-index: -1;
+  height: 100%;
   width: 100%;
   background-image: linear-gradient(120deg, #000, #0d3068, #10397c, #2166a3, #236fb1);
   background-size: 200% 200%;
+  /* background-position: center; */
   animation: bgAnimatedGradient 10s infinite ease-in-out;
+}
+.animatedBg {
+  /* margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden; */
+  background-color: transparent;
+  height: 100vh;
+  width: 100%;
+  /* background-image: linear-gradient(120deg, #000, #0d3068, #10397c, #2166a3, #236fb1);
+  background-size: 200% 200%;
+  animation: bgAnimatedGradient 10s infinite ease-in-out; */
 }
 
 @keyframes bgAnimatedGradient {
@@ -65,17 +86,20 @@ body {
 
 .navbarMain1 {
   background-color: black;
-  color: white;
+  color: black;
   width: 100%;
   font-family: 'Times New Roman', Times, serif;
   font-size: medium;
   padding: 7px;
   display: flex;
   flex-direction: row-reverse;
+  /* display: none; */
 }
 .navbarMain1Fix {
   position: fixed;
   top: 0;
+  color: white;
+  /* display: none; */
 }
 .navbarMain1 div, .fixSpace {
   margin-right: 20px;
@@ -811,4 +835,146 @@ span::after {
 #touch:checked + .slide {height: 300px;} 
 .DropDownProductsData{
   display: flex;
+}
+
+
+
+/* //////////////////   ADMIN SIDE CSS - LOGIN    /////////////////////////////////// */
+
+.loginForm {
+  height: fit-content;
+  max-width: 400px;
+  margin: 20vh auto;
+  color: white;
+  /* margin-top: ; */
+  background-color: white;
+
+  /* backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.5);
+  /* border-radius: 12px; */
+  /* border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.125); */
+  border-radius: 15px;
+}
+.loginFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+} .loginFormContainer h3 {
+  padding: 20px;
+  font-size: 25px;
+  font-weight: bold;
+  word-spacing: 10px;
+  height: fit-content;
+}
+.forgotLoginPass {
+  font-size: small;
+  color: #236fb1;
+}
+.loginBTN {
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 93%;
+  margin: 15px auto;
+  transition: 0.2s;
+} .loginBTN:hover {
+  background-color: black;
+  color: #fff;
+}
+
+
+/* ////////////   ADMIN DASHBOARD   ///////////// */
+
+.adminDrawerMain {
+  height: fit-content;
+  width: fit-content;
+  min-width: 60%;
+  margin: 0 auto;
+  border-radius: 15px;
+  background-color: white;
+  color: #000;
+  position: relative;
+  top: 10vh;
+} .adminDrawerMain hr {
+  width: 80%;
+  margin: 0 auto;
+  border-color: #000;
+}
+.dashMainLink {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border-bottom: 1px solid #000;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.statsCardsMain {
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+} .totalAccStatCard, .totalPurcStatCard {
+  min-width: 250px;
+  height: fit-content;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  /* background-color: white; */
+  /* border: 1px solid white; */
+} .totalAccStatCard h2, .totalPurcStatCard h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+.totalAccStatCard {
+  background: linear-gradient(0deg, #10397c, #236fb1);
+}
+.totalPurcStatCard {
+  background: linear-gradient(0deg, #a08f2b, #f4d942);
+}
+
+.adminDrawerLinks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.adminDrawerInstanceLink {
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.adminDrawerInstance {
+  border: 1px solid black;
+  background-color: #000;
+  width: fit-content;
+  height: fit-content;
+  padding: 15px;
+  margin: 15px;
+  align-items: center;
+  border-radius: 15px;
+  color: #fff;
+}
+.drawIcons {
+  font-size: 25px;
+  margin: 10px;
+}
+
+.adminPanelTop {
+  display: flex;
+  font-size: larger;
+}
+.adminPanelTopIcon {
+  display: flex;
+  font-size: 25px;
+  margin-left: 10px;
+  margin-right: 25px;
 }

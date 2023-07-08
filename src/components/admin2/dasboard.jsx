@@ -19,7 +19,6 @@ const Dashboard = () => {
 
       <a href="/admin-accounts">Manage Accounts</a>
       <a href="/admin-purchases">Manage Purchases</a>
-      {/* <a href="/admin-booking">Manage Bookings</a> */}
       <a href="/admin-accounts">Manage Details</a>
 
       <a href="/">Signout</a>
