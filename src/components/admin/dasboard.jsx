@@ -11,6 +11,7 @@ const Dashboard = () => {
   React.useEffect(()=>{
     getRequest('getPurchase')
     .then((res)=>{
+      console.log("data : ", res, " and length: ", res.length)
       setPurcaseCount(res.length);
     }).catch((error)=>{console.log("erorr: ", error)})
     getRequest('getProducts')

@@ -6,15 +6,16 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import Button from '@mui/material/Button/Button';
 import Alert from '@mui/material/Alert/Alert';
+import { postRequest } from '../../api/postRequest';
 
 
 function ReaderGameColumn({setData, data, index}){
   const handleGameChange = (event) => {
     const { name, value } = event.target;
-    const obj = {Name:'', Description:'', Image:'', ps4:false, ps5: false}
+    const obj = {'gameName':'', 'description':'', 'imageLink':'', 'ps4Game':false, 'ps5Game': false}
     console.log(index)
     if(index === 0){
-      if(name == 'ps4' || name == 'ps5'){
+      if(name == 'ps4Game' || name == 'ps5Game'){
         obj[name] = event.target.checked;
       }
       else{
@@ -23,7 +24,7 @@ function ReaderGameColumn({setData, data, index}){
       setData([obj]);
     }else{
       const updatedData = [...data];
-      if(name == 'ps4' || name == 'ps5'){
+      if(name == 'ps4Game' || name == 'ps5Game'){
         updatedData[index] = { ...updatedData[index], [name]: event.target.checked };
       }
       else{
@@ -39,7 +40,7 @@ function ReaderGameColumn({setData, data, index}){
     id="outlined-number"
     label="Name"
     type="text"
-    name='Name'
+    name='gameName'
     size='small'
     onChange={(event) => handleGameChange(event)}
     InputLabelProps={{
@@ -51,7 +52,7 @@ function ReaderGameColumn({setData, data, index}){
     label="Description"
     type="text"
     size='small'
-    name='Description'
+    name='description'
     onChange={(event) => handleGameChange(event)}
     InputLabelProps={{
       shrink: true,
@@ -62,7 +63,7 @@ function ReaderGameColumn({setData, data, index}){
     label="Image Link"
     type="text"
     size='small'
-    name='Image'
+    name='imageLink'
     onChange={(event) => handleGameChange(event)}
     InputLabelProps={{
       shrink: true,
@@ -72,10 +73,10 @@ function ReaderGameColumn({setData, data, index}){
   <div>
   <FormControlLabel
 label={<Typography sx={{ color:'black' }}>PS4</Typography>  }
-control={ <Checkbox name='ps4' {..."label"}  onChange={(event) => handleGameChange(event)} />}/>
+control={ <Checkbox name='ps4Game' {..."label"}  onChange={(event) => handleGameChange(event)} />}/>
 <FormControlLabel
 label={<Typography sx={{ color:'black' }}>PS5</Typography>  }
-control={ <Checkbox {..."label"}  />}/>
+control={ <Checkbox name='ps5Game' {..."label"}  />}/>
 </div>
   </div>
 }
@@ -108,6 +109,27 @@ export default function CustomeForm() {
         window.alert(`${range}, ${expiry}, ${price}, ${game.toString()}` );
     }
  
+    function saveData(){
+      console.log("data add krny lagy hain, ")
+      const data = {
+        "productid":  Math.random() * (999999 - 100000) + 100000,
+        "accountpricevisibility": priceVisibilty,
+        "accountPrice":price,
+        "primaryAccount":primary,
+        "secondaryAccount":secondary,
+        "isPsPlus":plus,
+        "psplusExp1ry":expiry,
+        "isBooked":false,
+        "productAvailability":availability,
+        "gamelist":game
+      }
+      console.log("hamara data ha ", data)
+      postRequest("saveProduct", data).then((res)=>{console.log("res add, ", res)}).catch((error)=>{console.log("error, ", error)})
+    }
+
+    function deleteData(){
+
+    }
     return (
     <div style={{ color:'#435B66', paddingTop:"1.5rem", paddingBottom:"1.5rem", textAlign:'center'}}><h2>ADD NEW ACCOUNT</h2>
     <br/>
@@ -168,7 +190,9 @@ export default function CustomeForm() {
         {Array.from({ length: range }, (_, index) => (
         <ReaderGameColumn key={index} handleInputChanges={handleInputChange} data={game} setData={setGame} index={index}/>
       ))}
-        <div style={{paddingTop:'1.5rem', paddingBottom:'1.5rem'}}><Button variant="contained" color='success'>Save</Button> <Button variant="contained" color='error'>Delete</Button></div>
+        <div style={{paddingTop:'1.5rem', paddingBottom:'1.5rem'}}>
+          <Button variant="contained" color='success' onClick={saveData}>Save</Button>
+          <Button variant="contained" color='error'>Delete</Button></div>
     </div>
   )
 }

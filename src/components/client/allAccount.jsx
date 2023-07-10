@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { baseURL } from "../../utils/constant";
 
 import SpinnerLoader from '../other/spinnerLoader';
+import { postRequest } from "../api/postRequest";
+import Purchases from "../admin/purchases";
 
 const AllAccount = () => {
   const mainURL = `${baseURL}/getProducts`;
@@ -55,6 +57,24 @@ const AllAccount = () => {
   function showModalPop(index) {
     document.getElementById(index+`dialog`).classList.toggle("visible");
     document.getElementById("customBackdrop").classList.toggle("visible");
+  }
+
+
+  function createPurcase(event) {
+
+    postRequest('savePurchase', {
+      id: Math.random() * (999999 - 100000) + 100000,
+      email: event.target.email.value,
+      phoneNumber: event.target.phone.value,
+      buyerName: event.target.name.value,
+      productid: event.target.product.value
+    }).then((res)=>{
+      console.log(res);
+    }).catch((err)=>{
+      console.log(err);
+    })
+
+    alert(event.target.product.value)
   }
 
   return (
@@ -125,10 +145,11 @@ const AllAccount = () => {
                   {/* <hr /> 
                   <br /> */}
                   <div className="purchaseTitle">Purchase Account :</div>
-                  <form action='#' method="POST" className="purchasingForm">
-                    <input type="text" name='name' placeholder="Name" required minLength={4} maxLength={22} />
-                    <input type="email" name='email' placeholder="Email" required minLength={7} maxLength={32} />
-                    <input type="tel" name="phone" placeholder="Phone No." required minLength={9} maxLength={13} />
+                  <form onSubmit={createPurcase} className="purchasingForm">
+                    <input type="text" id="buyerName" name='name' placeholder="Name" required minLength={4} maxLength={22} />
+                    <input type="email" id="buyerEmail" name='email' placeholder="Email" required minLength={7} maxLength={32} />
+                    <input type="tel" id="buyerPhone" name="phone" placeholder="Phone No." required minLength={9} maxLength={13} />
+                    <input type="hidden" name="product" value={account.productid} />
 
                     <button type="submit">Request Purchase</button>
                     {/* https://api.whatsapp.com/send?phone=3044302391&text=Hi */}
