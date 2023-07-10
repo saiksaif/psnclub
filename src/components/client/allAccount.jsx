@@ -14,7 +14,7 @@ const AllAccount = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(mainURL);
+        const response = await fetch(testDataUrl);
         const data = await response.json();
 
         // console.log(data)

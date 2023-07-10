@@ -1,8 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Link } from 'react-router-dom'
+import { baseURL } from '../../utils/constant';
 
 const FooterMain = () => {
+  const mainURL = `${baseURL}/getAdminInfo`;
+  const testDataUrl = 'https://raw.githubusercontent.com/saiksaif/psnclub/main/src/utils/testAccounts.json';
+  const [adminDetails, setAdminDetails] = useState({    
+    phone: 423513375,
+    group: "https://chat.whatsapp.com/GJaY86gr18IAUgHBsGdD9P"
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(testDataUrl);
+        const data = await response.json();
+
+        const adminData = {
+          phone: data.phoneNumber,
+          group: data.w_Group
+        };
+
+        alert(adminData)
+        setAdminDetails(adminData);
+      } catch (error) {
+        console.error('Error fetching account data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
     <footer>
         <div className='footerMain'>

@@ -38,6 +38,7 @@ const NavbarMain = ({open: Open }) => {
         </div>
         <div className='navbarMain1 navbarMain1Fix'>
             <div>PSN CLUB</div>
+            {/* <div>Buy Cheap PSN Accounts</div> */}
         </div>
         <div className='navbarMain2'>
             <div className='startNavBtns'>
@@ -48,10 +49,10 @@ const NavbarMain = ({open: Open }) => {
             
             <div className='centerNavBtns hidden-sm'>
               <Link id='homeA' className={`centerNavBtnsA + ${'homeA' == Open ? "selectedNav" : ""}`} to='/'>Home</Link>
-              <Link id='ps5A' className={`centerNavBtnsA + ${'ps5A' == Open ? "selectedNav" : ""}`} to='/ps5-accounts'>PS5 Accounts</Link>
-              <Link id='ps4A' className={`centerNavBtnsA + ${'ps4A' == Open ? "selectedNav" : ""}`} to='/ps4-accounts'>PS4 Accounts</Link>
-              <Link id='AllA' className={`centerNavBtnsA + ${'AllA' == Open ? "selectedNav" : ""}`} to='/all-accounts'>All Accounts</Link>
-              <Link id='OthA' className={`centerNavBtnsA + ${'OthA' == Open ? "selectedNav" : ""}`} to='/other-services'>Other Services</Link>
+              <Link id='ps5A' className={`centerNavBtnsA + ${'ps5A' == Open ? "selectedNav" : ""}`} to='/ps5-accounts'>PS5</Link>
+              <Link id='ps4A' className={`centerNavBtnsA + ${'ps4A' == Open ? "selectedNav" : ""}`} to='/ps4-accounts'>PS4</Link>
+              <Link id='AllA' className={`centerNavBtnsA + ${'AllA' == Open ? "selectedNav" : ""}`} to='/all-accounts'>All</Link>
+              <Link id='OthA' className={`centerNavBtnsA + ${'OthA' == Open ? "selectedNav" : ""}`} to='/other-services'>More</Link>
             </div>
             
             <div className='endNavBtns fixSpace'>

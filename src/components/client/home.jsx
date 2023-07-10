@@ -65,12 +65,14 @@ const Home = () => {
           <div className='HomeCategoryBoxes'>
             <Link to="/ps5-accounts">
               <div className='ps5GamesBoxHome'>
+                <div className='inImgCategoryName'>BROWSE<br /> PS5 GAMES</div>
                 <img id='dsController5' src="/ds5.png" alt="Ps5 controller" width={300} />
               </div>
             </Link>
 
             <Link to="/ps4-accounts">
               <div className='ps4GamesBoxHome'>
+                <div className='inImgCategoryName'>BROWSE<br /> PS4 GAMES</div>
                 <img id='dsController4' src="/ds4.png" alt="Ps5 controller" width={300} />
               </div>
             </Link>
@@ -79,13 +81,18 @@ const Home = () => {
           {/* <h1 className='middleSectionExplore'>Explore More:</h1> */}
 
           <Link to="/other-services">
-          <div className="HomePageOtherServices">
-            <img src="/Netflix.png" alt="Netflix Logo" width={250}/>
-            <img src="/amazon.png" alt="Amazon Prime Logo" width={250} />
-            <img src="/disny.png" alt="Disney + Logo" width={250} />
-            <img src="/appletv.jpeg" alt="Apple TV + Logo" width={250} />
-            <img src="/hbo.png" alt="HBO Logo" width={250} />
-          </div>
+            <div className='otherServParent'>
+              <div className='otherServHeader'>
+                OTHER SERVICES WE OFFER
+              </div>
+              <div className="HomePageOtherServices">
+                <img src="/Netflix.png" alt="Netflix Logo" width={250}/>
+                <img src="/amazon.png" alt="Amazon Prime Logo" width={250} />
+                <img src="/disny.png" alt="Disney + Logo" width={250} />
+                <img src="/appletv.jpeg" alt="Apple TV + Logo" width={250} />
+                <img src="/hbo.png" alt="HBO Logo" width={250} />
+              </div>
+            </div>
           </Link>
         </div>    
       </div>
