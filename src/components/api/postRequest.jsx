@@ -2,6 +2,7 @@ import axios from 'axios';
 import { baseURL } from '../../utils/constant';
 
 export const postRequest = (url, data) => {
+    console.log("Post Request got Data:"+data)
     return axios.post(`${baseURL}/${url}`, data,
         // {
         //     headers: {

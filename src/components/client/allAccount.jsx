@@ -63,11 +63,11 @@ const AllAccount = () => {
   function createPurcase(event) {
 
     postRequest('savePurchase', {
-      id: Math.random() * (999999 - 100000) + 100000,
+      purchaseId: Math.random() * (999999 - 100000) + 100000,
       email: event.target.email.value,
       phoneNumber: event.target.phone.value,
       buyerName: event.target.name.value,
-      productid: event.target.product.value
+      productId: event.target.product.value
     }).then((res)=>{
       console.log(res);
     }).catch((err)=>{
