@@ -4,9 +4,11 @@ import { baseURL } from '../../utils/constant';
 
 
 export const deleteRequest = (url, id) => {
+    let tokenInLocalStorage = localStorage.getItem('userToken')
+
     return axios.delete(`${baseURL}/${url}/${id}`, {
         headers: {
-            // Authorization: tokenInLocalStorage
+            "x-access-token": tokenInLocalStorage
         }
     }).then((response) => {
         console.log("Data from Database is Deleted: " + response.data)

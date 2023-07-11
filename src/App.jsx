@@ -27,35 +27,64 @@ import OtherDetails from './components/admin/otherdetails'
 import Dashboard from './components/admin/dasboard';
 
 import Home from './components/client/home';
+import { RequireAuth } from './components/other/RequireAuth';
 
 const App = () => {
 
   return (
     <main className='MainArea'>
 
-      
+
 
       <Routes>
-            <Route path='/' element={<ClientRoutes component={<Home />} open="homeA" />} />
+        <Route path='/' element={<ClientRoutes component={<Home />} open="homeA" />} />
 
-            {/* If home or empty url then this */}
+        {/* If home or empty url then this */}
 
-            <Route path='/ps5-accounts' element={<ClientRoutes component={<Ps5Account />} open="ps5A" />} />
-            <Route path='/ps4-accounts' element={<ClientRoutes component={<Ps4Account />} open="ps4A" />} />
-            <Route path='/all-accounts' element={<ClientRoutes component={<AllAccount />} open="AllA" />} />
-            <Route path='/other-services' element={<ClientRoutes component={<OtherService />} open="OthA" />} />
-            <Route path='/search' element={<ClientRoutes component={<Search />} open="SearA" />} />
+        <Route path='/ps5-accounts' element={<ClientRoutes component={<Ps5Account />} open="ps5A" />} />
+        <Route path='/ps4-accounts' element={<ClientRoutes component={<Ps4Account />} open="ps4A" />} />
+        <Route path='/all-accounts' element={<ClientRoutes component={<AllAccount />} open="AllA" />} />
+        <Route path='/other-services' element={<ClientRoutes component={<OtherService />} open="OthA" />} />
+        <Route path='/search' element={<ClientRoutes component={<Search />} open="SearA" />} />
 
 
-            <Route path='/login' element={<AdminRoutes component={<Login />} />} />
-            <Route path='/admin-accounts' element={<AdminRoutes component={<Accounts />} />} />
-            <Route path='/admin-purchases' element={<AdminRoutes component={<Purchases />} />} />
-            <Route path='/admin-other-details' element={<AdminRoutes component={<OtherDetails />} />} />
-            {/* <Route path='/admin-booking' element={<AdminRoutes component={<Booking />} />} /> */}
-            <Route path='/admin-dashboard' element={<AdminRoutes component={<Dashboard />} />} />
+        <Route path='/login' element={<AdminRoutes component={<Login />} />} />
+        <Route
+          path='/admin-accounts'
+          element={
+            <RequireAuth>
+              <AdminRoutes component={<Accounts />} />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path='/admin-purchases'
+          element={
+            <RequireAuth>
+              <AdminRoutes component={<Purchases />} />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path='/admin-other-details'
+          element={
+            <RequireAuth>
+              <AdminRoutes component={<OtherDetails />} />
+            </RequireAuth>
+          }
+        />
+        {/* <Route path='/admin-booking' element={<AdminRoutes component={<Booking />} />} /> */}
+        <Route
+          path='/admin-dashboard'
+          element={
+            <RequireAuth>
+              <AdminRoutes component={<Dashboard />} />
+            </RequireAuth>
+          }
+        />
       </Routes>
-      
-      
+
+
 
     </main>
   );

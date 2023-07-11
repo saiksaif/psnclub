@@ -23,6 +23,7 @@ const Login = () => {
     const [user, setUser] = React.useState('')
     // const auth = useAuth()
     const navigate = useNavigate()
+    localStorage.clear()
 
     const formik = useFormik({
         initialValues: {

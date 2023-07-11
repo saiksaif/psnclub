@@ -4,9 +4,11 @@ import { baseURL } from '../../utils/constant';
 
 
 export const getRequest = (url) => {
+    let tokenInLocalStorage = localStorage.getItem('userToken')
+
     return axios.get(`${baseURL}/${url}`, {
         headers: {
-            // Authorization: tokenInLocalStorage
+            "x-access-token": tokenInLocalStorage
         }
     }).then((response) => {
         console.log("Data from Database is: " + response.data)

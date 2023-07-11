@@ -2,14 +2,14 @@ import axios from 'axios';
 import { baseURL } from '../../utils/constant';
 
 export const postRequest = (url, data) => {
-    console.log("Post Request got Data:"+data)
-    return axios.post(`${baseURL}/${url}`, data,
-        // {
-        //     headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json',
-        //     }
-        // }
+    let tokenInLocalStorage = localStorage.getItem('userToken')
+
+    console.log("Post Request got Data:" + data)
+    return axios.post(`${baseURL}/${url}`, data, {
+        headers: {
+            "x-access-token": tokenInLocalStorage
+        }
+    }
     ).then((response) => {
         console.log("Data from Database is: " + response.data)
         return response.data
