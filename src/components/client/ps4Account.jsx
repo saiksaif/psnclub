@@ -13,7 +13,7 @@ const Ps4Account = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(testDataUrl);
+        const response = await fetch(mainURL);
         const data = await response.json();
 
         // Filter the account data based on "ps5Game" condition
