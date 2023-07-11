@@ -32,6 +32,10 @@ body {
   background-color: #000;
   outline: none;
 }
+.navbarMain2 > body {
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
 .animatedBg2 {
   /* border: 10px solid black; */
   margin: 0;
@@ -574,6 +578,9 @@ body {
   left: 0;
   z-index: 2;
 }
+/* .dialogBox:hover > body, .dialogBox2:hover > body {
+  overflow-y: hidden !important;
+} */
 .dialogBox {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -589,7 +596,7 @@ body {
   height: 85vh;
   overflow-y: auto;
   display: none;
-  position: absolute;
+  position: fixed;
   top: 10vh;
   z-index: 5;
 }

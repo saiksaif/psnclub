@@ -48,6 +48,7 @@ const NavbarMain = ({open: Open }) => {
             </div>
             
             <div className='centerNavBtns hidden-sm'>
+              {/* <ScrollRestoration></ScrollRestoration> */}
               <Link id='homeA' className={`centerNavBtnsA + ${'homeA' == Open ? "selectedNav" : ""}`} to='/'>Home</Link>
               <Link id='ps5A' className={`centerNavBtnsA + ${'ps5A' == Open ? "selectedNav" : ""}`} to='/ps5-accounts'>PS5</Link>
               <Link id='ps4A' className={`centerNavBtnsA + ${'ps4A' == Open ? "selectedNav" : ""}`} to='/ps4-accounts'>PS4</Link>

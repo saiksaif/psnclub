@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Link } from 'react-router-dom'
 import { baseURL } from '../../utils/constant';
 
 const FooterMain = () => {
-  const mainURL = `${baseURL}/getAdminInfo`;
-  const testDataUrl = 'https://raw.githubusercontent.com/saiksaif/psnclub/main/src/utils/testAccounts.json';
+  // const mainURL = `${baseURL}/getAdminInfo`;
+  const testDataUrl = 'https://raw.githubusercontent.com/saiksaif/psnclub/main/src/utils/testAdmin.json';
   const [adminDetails, setAdminDetails] = useState({    
     phone: 423513375,
     group: "https://chat.whatsapp.com/GJaY86gr18IAUgHBsGdD9P"
@@ -22,7 +22,7 @@ const FooterMain = () => {
           group: data.w_Group
         };
 
-        alert(adminData)
+        console.log(adminData)
         setAdminDetails(adminData);
       } catch (error) {
         console.error('Error fetching account data:', error);
@@ -45,9 +45,9 @@ const FooterMain = () => {
             </div>
 
             <ul className="lastLinksFooter hidden-sm">
-              <li>03044302391</li>
+              <li>03{adminDetails.phone}</li>
               <li><br /></li>
-              <li>Whatsapp Link</li>
+              <a href={adminDetails.group}>Join Whatsapp Group</a>
             </ul>
         </div>
     </footer>
