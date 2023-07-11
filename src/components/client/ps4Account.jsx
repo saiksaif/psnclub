@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { baseURL } from '../../utils/constant';
 
 import SpinnerLoader from '../other/spinnerLoader';
+import { postRequest } from '../api/postRequest';
 
 const Ps4Account = () => {
   const mainURL = `${baseURL}/getProducts`;
@@ -46,6 +47,22 @@ const Ps4Account = () => {
   function showModalPop(index) {
     document.getElementById(index+`dialog`).classList.toggle("visible");
     document.getElementById("customBackdrop").classList.toggle("visible");
+  }
+
+  function createPurcase(event) {
+    postRequest('savePurchase', {
+      purchaseId: Math.random() * (999999 - 100000) + 100000,
+      email: event.target.email.value,
+      phoneNumber: event.target.phone.value,
+      buyerName: event.target.name.value,
+      productId: event.target.product.value
+    }).then((res)=>{
+      console.log(res);
+    }).catch((err)=>{
+      console.log(err);
+    })
+
+    alert(event.target.product.value)
   }
 
   return (
@@ -118,10 +135,11 @@ const Ps4Account = () => {
                   </div>  <br />
                   {/* <hr /> */}
                   <div className="purchaseTitle">Purchase Account:</div>
-                  <form action='#' method="POST" className="purchasingForm">
+                  <form onSubmit={createPurcase} className="purchasingForm">
                     <input type="text" name='name' placeholder="Name" required minLength={4} maxLength={22} />
                     <input type="email" name='email' placeholder="Email" required minLength={7} maxLength={32} />
                     <input type="tel" name="phone" placeholder="Phone No." required minLength={9} maxLength={13} />
+                    <input type="hidden" name="product" value={account.productid} />
 
                     <button type="submit">Request Purchase</button>
                   </form>
