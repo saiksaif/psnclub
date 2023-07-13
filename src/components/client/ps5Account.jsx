@@ -6,7 +6,7 @@ import { postRequest } from './../api/postRequest';
 
 const Ps5Account = () => {
   const mainURL = `${baseURL}/getProducts`;
-  const testDataUrl = 'https://raw.githubusercontent.com/saiksaif/psnclub/main/src/utils/testAccounts.json';
+  // const testDataUrl = 'https://raw.githubusercontent.com/saiksaif/psnclub/main/src/utils/testAccounts.json';
   const [filteredAccountData, setFilteredAccountData] = useState([]);
   const [load, setLoad] = useState(true);
 

@@ -12,7 +12,7 @@ const MainCard = ({purchase, product})=>{
         
         <div className="totalPurcStatCard" onClick ={()=>{window.location.replace('http://localhost:3000/admin-purchases')}}>
           <h2 className="card_stats"> {purchase} </h2>
-          <p>Total Purchases</p>
+          <p className="totalpurchase">Total Purchases</p>
         </div>
       </div>
     );

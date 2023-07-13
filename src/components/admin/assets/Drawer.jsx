@@ -26,10 +26,19 @@ export default function Drawer({ children }) {
               <span className='drawIcons'>{item.icon}</span>
               <span>{item.title}</span>
             </Link>
-          
+            
           </div>
         
         ))}
+
+        {/* <div className={'adminDrawerInstance'} onClick={localStorage.clear()}>
+          
+          <Link className='adminDrawerInstanceLink' to='/'>
+            <span className='drawIcons'>SIGNOUT</span>
+            <span>{item.title}</span>
+          </Link>
+          
+        </div> */}
 
       </div>
     </div>
