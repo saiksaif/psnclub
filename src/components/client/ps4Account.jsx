@@ -38,10 +38,9 @@ const Ps4Account = () => {
       if (gameArray[i].ps5Game === true) {
         return true;
         // break;
-      } else {
-        return false;
       }
     }
+    return false;
   }
 
   function showModalPop(index) {

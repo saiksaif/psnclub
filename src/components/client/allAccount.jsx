@@ -38,20 +38,18 @@ const AllAccount = () => {
       if (gameArray[i].ps5Game === true) {
         return true;
         // break;
-      } else {
-        return false;
       }
     }
+    return false;
   }
   function checkForGame4(gameArray) {
     for (var i = 0; i < gameArray.length; i++) {
       if (gameArray[i].ps4Game === true) {
         return true;
         // break;
-      } else {
-        return false;
       }
     }
+    return false;
   }
 
   function showModalPop(index) {

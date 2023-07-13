@@ -127,10 +127,13 @@ export default function CustomeForm() {
         "gamelist":game
       }
       console.log(data)
+
       postRequest("saveProduct", data).then((res)=>{
         console.log("res add, ", res);
-        alert("GAME ADDED");
-      }).catch((error)=>{console.log("error, ", error)})
+        console.warn("GAME ADDED");
+      }).catch((error)=>{
+        console.log("error, ", error)
+      });
     }
 
     function deleteData(){
