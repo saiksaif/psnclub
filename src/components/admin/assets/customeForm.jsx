@@ -14,15 +14,16 @@ function ReaderGameColumn({setData, data, index}){
     const { name, value } = event.target;
     const obj = {'gameName':'', 'description':'', 'imageLink':'', 'ps4Game':false, 'ps5Game': false}
     console.log(index)
-    if(index === 0){
-      if(name == 'ps4Game' || name == 'ps5Game'){
-        obj[name] = event.target.checked;
-      }
-      else{
-        obj[name] = value;
-      }
-      setData([obj]);
-    }else{
+    // if(index == 0){
+    //   if(name == 'ps4Game' || name == 'ps5Game'){
+    //     obj[name] = event.target.checked;
+    //   }
+    //   else{
+    //     obj[name] = value;
+    //   }
+    //   setData([obj]);
+    // }
+    // else{
       const updatedData = [...data];
       if(name == 'ps4Game' || name == 'ps5Game'){
         updatedData[index] = { ...updatedData[index], [name]: event.target.checked };
@@ -31,7 +32,7 @@ function ReaderGameColumn({setData, data, index}){
         updatedData[index] = { ...updatedData[index], [name]: value };
       }
       setData(updatedData);
-    }
+    // }
   };
 
 
@@ -69,15 +70,16 @@ function ReaderGameColumn({setData, data, index}){
       shrink: true,
     }} 
   />
-  <br/>
-  <div>
-  <FormControlLabel
-label={<Typography sx={{ color:'black' }}>PS4</Typography>  }
-control={ <Checkbox name='ps4Game' {..."label"}  onChange={(event) => handleGameChange(event)} />}/>
-<FormControlLabel
-label={<Typography sx={{ color:'black' }}>PS5</Typography>  }
-control={ <Checkbox name='ps5Game' {..."label"}  />}/>
-</div>
+    <br/>
+    <div>
+    <FormControlLabel
+      label={<Typography sx={{ color:'black' }}>PS4</Typography>  }
+      control={ <Checkbox name='ps4Game' {..."label"}  onChange={(event) => handleGameChange(event)} />}/>
+
+    <FormControlLabel
+      label={<Typography sx={{ color:'black' }}>PS5</Typography>  }
+      control={ <Checkbox name='ps5Game' {..."label"}  onChange={(event) => handleGameChange(event)} />}/>
+    </div>
   </div>
 }
 
@@ -106,11 +108,12 @@ export default function CustomeForm() {
       };
  
     function DisplayRangeData(){
-        window.alert(`${range}, ${expiry}, ${price}, ${game.toString()}` );
+        console.log(game);
+        // console.log(`${range}, ${expiry}, ${price}, ${game}` );
     }
  
     function saveData(){
-      console.log("data add krny lagy hain, ")
+      // console.log("data add krny lagy hain, ")
       const data = {
         "productid":  Math.random() * (999999 - 100000) + 100000,
         "accountpricevisibility": priceVisibilty,
@@ -123,8 +126,11 @@ export default function CustomeForm() {
         "productAvailability":availability,
         "gamelist":game
       }
-      console.log("hamara data ha ", data)
-      postRequest("saveProduct", data).then((res)=>{console.log("res add, ", res)}).catch((error)=>{console.log("error, ", error)})
+      console.log(data)
+      postRequest("saveProduct", data).then((res)=>{
+        console.log("res add, ", res);
+        alert("GAME ADDED");
+      }).catch((error)=>{console.log("error, ", error)})
     }
 
     function deleteData(){
@@ -135,8 +141,8 @@ export default function CustomeForm() {
     <br/>
 
         <FormControlLabel
-        label={<Typography sx={{ color:'black' }}>Availability</Typography>  }
-        control={ <Checkbox onChange={(event) => setAvailability(event.target.checked)} {..."label"} checked={availability} />}/>
+          label={<Typography sx={{ color:'black' }}>Availability</Typography>  }
+          control={ <Checkbox onChange={(event) => setAvailability(event.target.checked)} {..."label"} checked={availability} />}/>
         <FormControlLabel
         label={<Typography sx={{ color:'black' }}>PS PLUS</Typography>  }
         control={ <Checkbox onChange={(event) => setPlus(event.target.checked)} {..."label"}  />} checked={plus}/>
@@ -173,7 +179,8 @@ export default function CustomeForm() {
             shrink: true,
           }}
         />
-       <div style={{  textAlign:'end',  paddingRight:'1rem',  }}><TextField
+       <div style={{  textAlign:'end',  paddingRight:'1rem',  }}>
+        <TextField
           id="outlined-number"
           label="No of Games"
           type="number"
@@ -192,7 +199,8 @@ export default function CustomeForm() {
       ))}
         <div style={{paddingTop:'1.5rem', paddingBottom:'1.5rem'}}>
           <Button variant="contained" color='success' onClick={saveData}>Save</Button>
-          <Button variant="contained" color='error'>Delete</Button></div>
+          {/* <Button variant="contained" color='error'>Delete</Button> */}
+          </div>
     </div>
   )
 }
